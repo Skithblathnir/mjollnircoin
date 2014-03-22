@@ -1,5 +1,7 @@
 Mjollnircoin
 ============
+
+![MjollnircoinLogo](brokkir.github.com/mjollnircoin/share/pixmaps/mjollnircoin.png)
  
 Mjollnir is a lite version of Bitcoin using scrypt-adaptive-N as a proof-of-work algorithm.
 
