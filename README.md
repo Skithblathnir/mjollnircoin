@@ -1,11 +1,8 @@
-Mjollnircoin
-============
+## Mjollnircoin
 
 Mjollnir is a lite version of Bitcoin using scrypt-adaptive-N as a proof-of-work algorithm.
 
-
-Technical specification
------------------------
+### Technical specification
 
  - Algorithm: Scrypt-Adaptive-Nfactor (Not scrypt-jane)
  - Max Coins: 42 million mjollnircoins (42,000,000)
