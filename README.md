@@ -19,7 +19,7 @@ Mjollnir is a lite version of Bitcoin using scrypt-adaptive-N as a proof-of-work
 ### Temporal retargeting
 In order to withstand the difficulty fluctuations that would occur when automatic profit switching mining pools (multipools) hits Mjollnircoin, Mjollnir will begin to self-heal the network by lowering the difficulty if no block is found after a significant amount of time; The network will automatically recover from a multipool difficulty spike without emergency developer intervention within ~3 hours.
  
- ### Adaptive-NFactor SCRYPT
+### Adaptive-NFactor SCRYPT
 
 The adaptive N-factor applied is based on the timestamp of the generated blocks.
 Most SCRYPT cryptcoins use a fixed value.
@@ -42,6 +42,7 @@ Mjollnircoin's N-factor begins at 11 and gradually increases over time according
 | 8388608  | 1 GB   | 9979240809  | Thu, 25 Mar 2286 11:20:09 GMT |   |
 | 16777216 | 2 GB   | 16421691753 | Fri, 19 May 2490 21:02:33 GMT |   |
 | 33554432 | 4 GB   | 22864142697 | Sun, 15 Jul 2694 06:44:57 GMT |   |
+
 
 ### Developers
 
