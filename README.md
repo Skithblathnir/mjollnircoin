@@ -2,7 +2,6 @@
 
 ## Mjollnircoin
 
-Mjollnir is a lite version of Bitcoin using scrypt-adaptive-N as a proof-of-work algorithm.
 
 ### Technical specification
 
