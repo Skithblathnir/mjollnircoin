@@ -1,0 +1,170 @@
+---
+layout: default
+title: About Mjollnircoin
+name: about
+mnr_current_reward: 125
+mnr_bitmessage: BM-2cX1dV9TbqnCjyf7RP3PheqZMN2W8VReTp 
+mnr_bitmessage_s: BM-2cX7N1ipyQzQ1uwR7r4YcXPTpGinJNrcXj
+mnr_mail: mjollnircoin@gmx.de
+---
+{% include top.html %}
+<div class="wrapper">
+
+	<section>
+		<div class="banner">
+		<a href="index.html"><img src="images/mjollnircoin.png" width="72" height="72"/></a>
+
+		  <div class="viewport">
+                      <div class="tlt">
+			<span></span>
+			<ul class="texts" style="display:none;">
+				<li>Algorithm: HEFTY1</li>
+				<li>Ultra-secure: SHA-256, Keccak-512, Grøestl-512 and BLAKE-512</li>
+				<li>Max Coins: 42 million mjollnircoins (42,000,000)</li>
+				<li>Block time: 2.5 minutes</li>
+				<li>Block retarget up: Every 10 blocks (max 100%)</li>
+				<li>Block retarget down: Every block (max 500%)</li>
+				<li>Block reward: {{page.mnr_current_reward}} coins per block</li> 
+				<li>Multipool defense: Temporal retargeting</li>
+				<li>Block halving: Every 420K blocks (~2 years)</li>
+			</ul>
+		       </div>
+		   </div>
+		</div>
+	</section>
+
+
+ 	<section>
+
+<h2>
+<a name="mjollnircoin" class="anchor" href="#mjollnircoin"><span class="octicon octicon-link"></span></a>About Mjollnircoin</h2>
+
+<p>
+Mjollnircoin is a decentralized digital currency that enables instant payments to anyone in the world; it is a lite version of Bitcoin using a redundant cryptographic function as a proof-of-work algorithm. Mjollnircoin is a people's currency, intended to be efficiently mined with consumer-grade hardware. It is ultra secure, ASIC resistant, Multipool resistant and rare with a total number of 42 million mjollnircoins. At the time of launch, Mjollnircoin will only be mine-able with a CPU miner. There is a bounty for the <a href="vault.html">GPU miner</a></p>
+<p>
+Mjollnircoin uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of mjollnircoins is carried out collectively by the network. There is no concept of ownership (nobody controls or owns the Mjollnircoin network) and there are no restrictions on who can take part.
+</p>
+
+<h3>
+<a name="technical-specification" class="anchor" href="#technical-specification"><span class="octicon octicon-link"></span></a>Technical specifications</h3>
+<p>
+<ul>
+<li>Algorithm: HEFTY1 </li>
+<li>Ultra secure: SHA-256, Keccak-512, Grøestl-512 &amp; BLAKE-512</li>
+<li>Max Coins: 42 million mjollnircoins (42,000,000)</li>
+<li>Block time: 2.5 minutes</li>
+<li>Block re-target up: Every 10 blocks (Max 100%)</li>
+<li>Block re-target down: Every block (Max 500%)</li>
+<li>Block reward: 50 coins per block </li>
+<li>Multipool defence: Temporal re-targeting</li>
+<li>Block halving: Every 420K blocks (~2 years)</li>
+</ul>
+</p>
+
+<h3>
+<a name="temporal-retargeting" class="anchor" href="#temporal-retargeting"><span class="octicon octicon-link"></span></a>Temporal re-targeting</h3>
+
+<p>In order to withstand the difficulty fluctuations that would occur when automatic profit switching mining pools (multi-pools) hit Mjollnircoin, Mjollnir will begin to self-heal the network by lowering the difficulty if no block is found after a significant amount of time; The network will automatically recover from a multipool difficulty spike without emergency developer intervention within ~3 hours.</p>
+
+<h3>
+<a name="multi-script" class="anchor" href="#adaptive-nfactor-scrypt">
+<span class="octicon octicon-link"></span></a>Ultra-secure</h3>
+<p>
+Most crypto-currencies rely on a single hash algorithm to secure their block chain. Mjollnircoin employs 4 different hashing algorithms to tighten the security of the block chain. 
+Mjollnircoin uses the following cryptographic hash functions:
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/SHA-256">SHA-256</a></li>
+<li><a href="https://en.wikipedia.org/wiki/SHA-3">Keccak-512 (a.k.a., SHA-3)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Groestl">Grøestl-512</a></li>
+<li><a href="https://en.wikipedia.org/wiki/BLAKE_(hash_function)">BLAKE-512</a></li>
+</ul>
+	
+The final hash is a combined hash, <i>interleaved</i> from the four cryptographic hash functions above.
+</p>
+<p>
+This proof-of-work algorithm was originally introduced by <a href="www.heavycoin.org">Heavycoin</a>. In contrast with HVC, Mjollnircoin does not allow (phased) block reward voting. 
+</p>
+
+
+<h3>
+<a name="coin-control" class="anchor" href="#coin-control">
+<span class="octicon octicon-link"></span></a>Coin-control</h3>
+<p>
+Coin-control allows you to choose which of your addresses will be the sending addresses.
+More specifically, you can select which of your unspent outputs will be the sending inputs. 
+<ul>
+ <li>See all addresses (including change)</li>
+ <li>See which addresses are linked together</li>
+ <li>Allows you to select sending addresses (rather than client)</li>
+</ul>
+</p>
+
+
+<h3>
+<a name="premine" class="anchor" href="#premine">
+<span class="octicon octicon-link"></span></a>Pre-mine</h3>
+<p>
+Mjollnircoin has a premine for the public fundraiser , bounties and give-aways.
+<table>
+ <thead>
+    <th>block</th>
+    <th>amount</th>
+    <th>purpose</th>
+    <th>link</th>
+    <th>address</th>
+ </thead>
+ <tbody>
+     <tr>
+      <td>1</td>
+      <td>210,000</td>
+      <td>IPCO buy-in fundraiser</td>
+      <td><a href="ipco.html">link</a></td>
+      <td>TBA</td>
+     </tr>
+     <tr>
+       <td>2</td>
+       <td>105,000</td>
+       <td>Bounties (75%), Give-away (25%)</td>
+       <td><a href="vault.html">link</a></td>
+       <td>TBA</td>
+     </tr>
+ </tbody>
+</table>
+</p>
+
+<h3>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>Developers</h3>
+<p>
+As developers, we are dedicated to the development of Mjollnircoin over the years to come.
+<ul>
+ <li>brokkir &lt;{{page.mnr_bitmessage}}&gt;</li>
+ <li>sindri &lt;{{page.mnr_bitmessage_s}}&gt;</li>
+</ul>
+The best way to contact us is using the BitMessage addresses above. Alternatively, you can address us at {{page.mnr_mail}}
+</p>
+
+
+<h3>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>Licensed as Free, open-source software</h3>
+<p>
+Mjollnircoin is a free software project released under the MIT/X11 license which gives you the ability to run,
+modify , copy and distribute (modified) copies of the sofware.
+</p>
+</section>
+</div>
+
+<script type="text/javascript">
+$(function () {
+$viewport = $('.viewport');
+var $tlt = $viewport.find('.tlt');
+
+$tlt.textillate(
+	{ 
+		in: { effect: 'rollIn' }, 
+ 		out: { effect: 'rollOut'},
+		autostart: true,
+		loop:true
+	});
+});
+</script>
+<!--[if !IE]><script>fixScale(document);</script><![endif]-->

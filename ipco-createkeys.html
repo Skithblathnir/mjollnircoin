@@ -1,0 +1,94 @@
+---
+layout: default
+title: Mjollnircoin IPO Stakeholders
+name: ipcostakeholders
+my_wallet_payment: 0.1
+my_wallet_txid: b1ffa514eacf0c62bc3142b530a3f0132b426c74e473d1f1a210bff7011ca072
+mnr_bitmessage: BM-2cX1dV9TbqnCjyf7RP3PheqZMN2W8VReTp 
+mnr_ipco_addr: 1G4bLg4ASmDrpHZs6zjaqg3MosMR4rHHxo
+mnr_mail: mjollnircoin@gmx.de
+mnr_ipco_mining_launch: 03/05/2014 00:00
+
+---
+{% include top.html %}
+<div class="wrapper">
+
+<section>
+	<h1>
+		<a name="keypairgen" class="anchor" href="#keypairgen"><span class="octicon octicon-link"></span></a>Join Mjollnir's IPCO</a>
+	</h1>
+	<p>
+		To invest in Mjollnircoin IPO, you can either skip to the <a href="#procedure">IPO procedure</a> directly or you can generate a Mjollnircoin address first, using our <a href="download-genkeys.html">KeyPair Address Tool</a>. If you are unable to generate a Mjollnircoin address, you can generate a Mjollnircoin address at a later time, after you have downloaded the wallet. The wallet becomes available on {{page.mnr_ipco_mining_launch}}. When the IPO ends, the Mjollnircoins are payed to this Mjollnircoin address. You will be asked for a Mjollnircoin address if we have not received one from you. Once you have downloaded the wallet, you can import your Mjollnircoin Private Key and your balance will be updated with your MNR stake 
+	</p>
+
+
+
+	<h2>
+	<a name="keypairgen" class="anchor" href="#keypairgen"><span class="octicon octicon-link"></span></a>Generating a Mjollnircoin address</h2>
+	<p>
+		<ol>
+			<li><a href="download-genkeys.html">Download the Mjollnircoin Keypair and Address Tool</a></li>
+			<li>Unzip the file to your Desktop</li>
+			<li>Run the tool to generate a Mjollnircoin Private/Public keypair and a Mjollnircoin Address:
+			<pre style="color:#dfdfdf;">
+1) Launch the Command prompt
+2) cd %HOME%\Desktop
+3) mjollnircoin-genkeys.exe
+
+Mjollnircoin Private Key:       5JuUtVQMJwo73e5pzL9vgff6XR3FDLgVMp4TcU6f4Yfjt2C8W9g
+Mjollnircoin Public Key:        042ba5fa6f9771c19806d460070cda6fb914aaff7870f31ee7a2562b083b76445183822ae2d959a9f3236d91e2356adedb5f926d2965ef413e6531390ef5a38ae4
+Mjollnircoin Address:           MXEAE5RxQbXKA1pDAx3QZQb9jcnMTZS17
+			</pre>
+			<b>Warning! In Windows there is a line-wrap splitting the public key over 2 lines!</b>
+			
+			</li>
+			<li>Remember to keep your Mjollnircoin Private Key secret!</li>
+
+		</ol>
+	</p>
+
+	<h2>
+	<a name="procedure" class="anchor" href="#procedure"><span class="octicon octicon-link"></span></a>IPO procedure</h2>
+
+	<p>
+		
+<div class="textwrap">
+<div class="left">
+
+<ul>
+<li>Send the desired amount to: <b>{{page.mnr_ipco_addr}}</b></li>
+<li>Send an email to {{page.mnr_email}}, or send a bitmessage to {{page.mnr_bitmessage}} with the following information:
+<ul>
+ <li>Transaction Amount (BTC)</li>
+ <li>BTC Sender Address</li>
+ <li>Mjollnircoin Address (optional)</li>
+ <li>Transaction ID</li>
+</ul>
+You will receive a confirmation by e-mail within 24 hours containing your investor ID.
+</ul>
+</p>
+</div>
+<div class="right">
+ <img src="images/{{page.mnr_ipco_addr}}.png" alt="{{page.mnr_ipco_addr}}"></img>
+</div>
+</div>
+
+	</p>
+
+	<h2>
+	<a name="keypairgen" class="anchor" href="#keypairgen"><span class="octicon octicon-link"></span></a>IPO security</h2>
+	<p>
+		<ul>
+			<li>We will send you an e-mail or bitmessage confirming your IPO payment has been received.</li>
+			<li>A few days before the release on {{page.mnr_ipco_mining_launch}}, we will publish the list of IPO stakeholders</li>
+			<li>If there are any issues, we will attempt to resolve them before the release on {{page.mnr_ipco_mining_launch}}</li>
+			<li>If you cannot run the KeyPair Address Tool, we can perform the key generation procedure for you. The generated Private and Public Key can be kept on cold storage at your option. </li>
+			<li>We will not share your information with any entity.</li>
+		</ul>
+	</p>
+
+
+</section>
+<!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
+

@@ -1,0 +1,20 @@
+---
+layout: default
+title: Mjollnircoin's Audience
+name: audience
+---
+{% include top.html %}
+
+<div class="wrapper">
+		{% for post in site.posts %}
+		<section>
+			<span>{{ post.date | date_to_string }}</span>&raquo;
+			<h3>{{ post.title}}</h3>
+			<div>
+				{{ post.content }}
+			</div>
+		</section>
+		{% endfor %}
+</div>
+<!--[if !IE]><script>fixScale(document);</script><![endif]-->
+

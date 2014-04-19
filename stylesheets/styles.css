@@ -609,6 +609,16 @@ strong {
   margin: 0 auto;
   position: relative;
   padding: 0 20px;
+  padding-top:50px;
+  z-index: 0;
+}
+
+.wrapper-home {
+  width:100%;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 20px;
+  z-index:0;
 }
 
 section img {
@@ -698,7 +708,7 @@ dt {
   z-index: 100;
   left: 0;
   top: 0px;
-  height: 60px;
+  height: 110px;
   width: 100%;
   position: fixed;
   background: url(../images/nav-bg.gif) #353535;
@@ -708,11 +718,12 @@ dt {
   -o-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
 }
+
+
 #header nav {
   max-width: 650px;
   margin: 0 auto;
   padding: 0 10px;
-  background: blue;
   margin: 6px auto;
 }
 #header nav li {
@@ -766,6 +777,10 @@ dt {
   -o-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
   box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.2), 0px 1px 0px rgba(0, 0, 0, 0);
 }
+#header nav li img {
+  float: left;
+  margin-left: 0px;
+}
 #header nav li.fork {
   float: left;
   margin-left: 0px;
@@ -781,11 +796,37 @@ dt {
 }
 
 section {
-  max-width: 650px;
-  padding: 30px 0px 50px 0px;
+  padding: 10px 0px 20px 0px;
   margin: 20px 0;
-  margin-top: 70px;
+  margin-top: 10px;
 }
+section div.banner {
+   margin-left:auto;
+   margin-right:auto;
+   display:block;
+   text-align:center;
+   font-size:18px;
+   font-weight:bold;
+}
+
+section div.banner img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+section div.timer {
+  margin-left: auto;
+    margin-right: auto
+}
+
+section div.timer div {
+  max-width:500px;
+margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+}
+
 section #title {
   border: 0;
   outline: none;
@@ -819,6 +860,141 @@ section #title .credits.left {
 section #title .credits.right {
   float: right;
 }
+
+.wordcloud {
+	height: 7in;
+	margin: 0.5in auto;
+	padding: 0;
+	page-break-after: always;
+	page-break-inside: avoid;
+	width: 7in;
+}
+
+.wordcloudII {
+	height: 3in;
+	margin: 0.5in auto;
+	padding: 0;
+	page-break-after: always;
+	page-break-inside: avoid;
+	width: 7in;
+}
+
+.hide {
+  display: none;
+}
+
+.decal {
+  height: 2px;
+  background-color: #000;
+  border-bottom: 1px solid #333;
+}
+
+.download {
+   background-color:#edcc4a;
+   background-image: -moz-linear-gradient(center top, #ff8400, #edcc4a );
+   border-radius:3px;
+   box-shadow:0 1px 0 0 #85358c inset;
+   color:#31302f;
+   font-size:14px;
+   line-height:21px;
+   display:block;
+   float:left;
+   margin-bottom:15px;
+   margin-right:20px;
+   width:290px;
+}
+.download:hover {
+  background-color:c9b52e;
+}
+
+
+.downloadicon {
+	display:block;
+	float:left;
+	height:76px;
+	margin-left:2px;
+	margin-right:6px;
+	padding:0 4px;
+	text-align:center;
+	width: 64px;
+}
+
+.downloadicon img {
+	padding:4px 2px;
+	position relative;
+	margin:0 0px;
+}
+
+a.downloadlink {
+	color:#31302f;
+	font-size:14px;
+	font-weight:normal;
+	text-shadow:0 0 0;
+}
+
+a.checksum {
+	border-top:1px solid #ecbc5e;
+	color:#31302f;
+	display:block;
+	font-size:13px;
+	font-weight:normal;
+	height:32px;
+	text-decoration:none;
+	text-shadow:0 0 0;
+	width:100%;
+
+}
+
+.checksumtext {
+	background: url( "/images/lock.png" ) no-repeat scroll left center rgba(0,0,0,0);
+	display:block;
+	margin-top:2px;
+	padding-left:32px;
+	width:200px;
+	margin-left:76px;
+
+}
+a.checksum:hover {
+  background-color:c9b52e;
+}
+
+.arrowdown {
+	float:right;
+	margin-right:4px;
+	margin-top:0;
+}
+
+
+/* EFFECTS
+***************/
+
+.glow {
+  text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    -webkit-transition: text-shadow 1s linear;
+       -moz-transition: text-shadow 1s linear;
+         -o-transition: text-shadow 1s linear;
+            transition: text-shadow 1s linear;
+}
+
+.glow.in {
+  text-shadow: 
+    0.025em 0.025em 0.025em rgba(0, 0, 0, 0.8),
+    0 0 0.5em rgba(255, 255, 255, 0.3);
+}
+
+.fade {
+  opacity: 0;
+    -webkit-transition: opacity 1s linear;
+       -moz-transition: opacity 1s linear;
+         -o-transition: opacity 1s linear;
+            transition: opacity 1s linear;
+}
+
+.fade.in {
+  opacity: 1;
+}
+
+
 
 @media print, screen and (max-width: 720px) {
   #title .credits {

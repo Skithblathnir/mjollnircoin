@@ -1,0 +1,171 @@
+---
+layout: default
+title: Mine Mjollnircoin
+name: mining
+mnr_ipco_mining_launch: 03/05/2014 00:00
+mnr_countdown_m: 5 
+mnr_countdown_d: 3 
+mnr_countdown_h: 00
+mnr_cpuminer_link: download-miner.html
+---
+{% include top.html %}
+
+<div class="wrapper">
+<section>
+
+<h2>
+<a name="mine-mjollnircoin" class="anchor" href="#mine-mjollnircoin">
+<span class="octicon octicon-link"></span></a>Mjollnircoin Mining Rewards</h2>
+<p>
+Miners are normally awarded with 50 new mjollnircoins per block, an amount which gets halved roughly every 2 years (every 420,000 blocks). The first 4000 blocks have a special reward to encourage miners to start hashing (and thus start securing the network):
+<ul>
+ <li>block    3 - 1000: 125 MNR</li>
+ <li>block 1000 - 2000: 100 MNR</li>
+ <li>block 2000 - 4000:  75 MNR</li>
+ <li>block 4000 - 420000: 50 MNR</li>
+</ul>
+</p>
+
+<h2>
+<a name="mine-mjollnircoin" class="anchor" href="#mine-mjollnircoin">
+<span class="octicon octicon-link"></span></a>Getting Started</h2>
+<p>
+<ol>
+ <li>Get the <a href="wallet.html">Mjollnircoin Wallet</a></li>
+ <li>Edit the <a href="#config">configuration</a></li>
+ <li style="color:#d0d0d0;">Get the  <a href="{{page.mnr_cpuminer_link}}">cpu-miner</a> or use the built-in miner</li>
+ <li>Point the miner to your wallet</li>
+ <li><a href="#mjollnircoinsolo">Start mining</a></li>
+</ol>
+</p>
+
+
+
+<h2>
+<a name="config" class="anchor" href="#config">
+<span class="octicon octicon-link"></span></a>Configuring Mjollnircoin</h2>
+<p>
+Edit your <b>mjollnircoin.conf</b> file or create a new one.
+</p>
+<p>The mjollnircoin.conf file is located here:
+<ol>
+ <li>Linux: $HOME/.mjollnircoin/mjollnircoin.conf</li>
+ <li>Windows: C:\Users\Username\Appdata\Roaming\Mjollnircoin\mjollnircoin.conf</li>
+</ol>
+
+Edit or add the following lines:
+<pre style="color:#dfdfdf;">
+
+   rpcpassword=Your_Password_Change_It
+   rpcuser=Your_Username_Change_It
+   rpcallowip=127.0.0.1
+   server=1
+
+</pre>
+
+If you want to run Mjollnircoin's built-in miner automatically with mjollnircoin-qt, you can add the line
+<pre style="color:#dfdfdf;">
+
+   gen=1
+
+</pre>
+</p>
+
+<h2>Using the built-in miner</h2>
+<p>
+Start Mjollnircoin-Qt, click Help &raquo; Debug Window &raquo; Console, then type the following command: 
+<pre style="color:#dfdfdf;">
+
+   setgenerate true 2
+
+</pre>
+This will start two worker threads; You can set the number of worker threads equal to the number of CPU cores you have.
+To see information about mining, type the following command:
+<pre style="color:#dfdfdf;">
+
+    getmininginfo
+
+</pre>
+</p>
+
+
+<h2>
+<a name="mine-mjollnircoin" class="anchor" href="#mine-mjollnircoin">
+<span class="octicon octicon-link"></span></a>Using the CPU-miner</h2>
+<p>
+<ul>
+<li>Download the <a href="{{page.mnr_cpuminer_link}}">cpu-miner</a></li>
+<li>Extract the ZIP file</li>
+<li>If you are on Windows, open a Command prompt and start the miner</li>
+</ul>
+<pre style="color:#dfdfdf;">
+
+minerd.exe -a heavy -o 127.0.0.1:18320 -u username -p password -t1
+
+</pre>
+<ul>
+<li>If you are on Linux, open a Terminal or Shell and start the miner</li>
+</ul>
+<pre style="color:#dfdfdf;">
+
+./minerd -a heavy -o 127.0.0.1:18320 -u username -p password -t1
+
+</pre>
+<ul>
+<li>You can set the -t parameter to the number of cpu cores you have</li>
+</ul>
+</p>
+
+
+<h2>
+<a name="mine-mjollnircoin" class="anchor" href="#mine-mjollnircoin">
+<span class="octicon octicon-link"></span></a>Mining Pools</h2>
+<p>
+None available
+</p>
+</section>
+
+<section>
+<h2>
+<a name="mjollnircoinsolo" class="anchor" href="#mine-mjollnircoin">
+<span class="octicon octicon-link"></span></a>Mining Launch in:</h2>
+           <div class="timer">
+			<div>
+<script type="text/javascript">
+var myYr = new Date().getFullYear();
+var myMn = new Date().getMonth();
+
+var myCountdownTest = new Countdown({
+                          year    : myYr,
+                          month   : {{page.mnr_countdown_m}}, 
+                          day     : {{page.mnr_countdown_d}},
+                          hour    : {{page.mnr_countdown_h}},
+                          ampm    : "pm",
+                          width   : 500, 
+                          height  : 100,
+                          rangeHi : "month",
+                          hideLine: 1,
+                          numbers : {
+                                        font : "Arial",
+                                        color: "#212121",
+                                        bkgd : "#7e7676",
+                                        rounded: 0.17,
+                                        shadow: {
+                                                x:0, y: 3, s: 4, c : "#252525", a: 0.4
+                                                }
+                                },
+                          labels: {
+                                        font : "Arial",
+                                        color: "#a8a8a8",
+                                        weight : "bold"
+                                }
+                     });
+</script>
+                </div>
+	</div>
+
+
+</section>
+
+</div>
+<!--[if !IE]><script>fixScale(document);</script><![endif]-->

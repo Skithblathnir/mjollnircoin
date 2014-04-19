@@ -69,12 +69,16 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 36px;
   font-weight: 700;
+  text-align:center;
 }
-
-h2 {
+h2.dashed {
   padding-bottom: 10px;
   font-size: 32px;
   background: url('../images/bg_hr.png') repeat-x bottom;
+}
+h2 {
+  padding-bottom: 10px;
+  font-size: 32px;
 }
 
 h3 {
@@ -95,6 +99,15 @@ h6 {
 
 p {
   margin: 10px 0 15px 0;
+}
+
+
+#footer {
+    position : relative;
+    bottom : 0;
+    height : 40px;
+    margin-top : 0px;
+    text-align: center;
 }
 
 footer p {
@@ -120,6 +133,7 @@ a {
 
 a:hover, a:focus {text-decoration: underline;}
 
+
 footer a {
   color: #F2F2F2;
   text-decoration: underline;
@@ -133,19 +147,25 @@ strong {
   font-weight: bold;
 }
 
+div.centered img {
+  position: float;
+  margin: 0 auto;
+  padding:4px;
+  display:block;
+}
+
+img.logo {
+	position: float;
+	display:block;
+	margin-left:10px;
+	padding-right:10px;
+}
+
 img {
   position: relative;
   margin: 0 auto;
-  max-width: 739px;
   padding: 5px;
   margin: 10px 0 10px 0;
-  border: 1px solid #ebebeb;
-
-  box-shadow: 0 0 5px #ebebeb;
-  -webkit-box-shadow: 0 0 5px #ebebeb;
-  -moz-box-shadow: 0 0 5px #ebebeb;
-  -o-box-shadow: 0 0 5px #ebebeb;
-  -ms-box-shadow: 0 0 5px #ebebeb;
 }
 
 p img {
@@ -366,7 +386,32 @@ Full-Width Styles
   background: #212121;
 }
 
+div.textwrap {
+  float:left;
+  width:100%;
+}
+div.textwrap div.left {
+ float:left;
+ margin:4px;
+ width:55%;
+}
+div.textwrap div.right {
+ float:right;
+ margin:4px;
+}
 
+p.floating {
+  z-index:100;
+  position:relative;    
+  font-size:14px;
+  font-weight:bold;
+  margin:0 auto;
+  width:550px;
+  height:125px;
+  top:4px;
+  margin-top:16px;
+  display:block;
+}
 
 /*******************************************************************************
 Small Device Styles

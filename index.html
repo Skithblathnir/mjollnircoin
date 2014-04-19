@@ -1,179 +1,124 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Mjollnircoin by brokkir</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+---
+layout: default
+title: Mjollnircoin - A new digital peer-to-peer crypto currency
+name: home
+mnr_ipco_mining_launch: 03/05/2014 00:00
+mnr_countdown_m: 5 
+mnr_countdown_d: 3
+mnr_countdown_h: 00
+mnr_current_reward: 125
 
-  </head>
-  <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/brokkir/mjollnircoin">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/brokkir/mjollnircoin/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/brokkir/mjollnircoin/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
+---
+{% include top.html %}
 
-    <div class="wrapper">
+<div class="wrapper-home">
+	<section>
+	  <p class="floating">
+		"Then he gave the hammer to Thor, and said that Thor might smite as hard as he desired, whatsoever might be before him, and the hammer would not fail; and if he threw it at anything, it would never miss, and never fly so far as not to return to his hand;and if be desired, he might keep it in his sark, it was so small."
+	  </p>
+	</section>
 
-      <section>
-        <div id="title">
-          <h1>Mjollnircoin</h1>
-          <p></p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/brokkir">brokkir</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
+	<section>
+		<div class="banner">
+		  <div class="viewport">
+                      <div class="tlt">
+			<span></span>
+			<ul class="texts" style="display:none;">
+				<li>Ultra-secure and fast international payments</li>
+				<li>Fraud resistant</li>
+				<li>Works everywhere, anytime</li>
+				<li>Zero or low fees</li>
+				<li>Protects your identity</li>
+				<li>Receive mjollnircoins even when your computer is turned off!</li>
+				<li>Control which coins you send</li> 
+				<li>Public ledger of all accounting</li>
+				<li>Cheap micro payments</li>
+				<li>Controlled by all users around the world</li>
+				<li>No central authority</li>
+				<li>Payment freedom</li>
+				<li>No bank holidays</li>
+				<li>Cannot be regulated without cooperation of nearly all its users</li>
+				<li>Mjollnircoins are durable</li>
+				<li>Mjollnircoins are portable</li>
+				<li>Mjollnircoins are rare</li>
+				<li>Mjollnircoins are divisbile</li>
+				<li>Backed by state of the art mathematics</li>
+				<li>Price completely determined by supply and demand</li>
+				<li>No regulation</li>
+			</ul>
 
-        <p><img src="/mjollnircoin/images/mjollnircoin.png" alt=""></p>
+				       </div>
+		   </div>
+		</div>
+	</section>
 
+ 	<section>
+	  <div class="banner">
+		<a href="index.html"><img src="images/mjollnircoin.png"/></a>
+	  </div>
+	 
+	</section>
+	<section>
+
+	<div class="banner">
+		<h1>A new open-source peer-to-peer crypto currency</h1>
+
+	</div>
+	
+	   <div class="timer">
+		<div>
 <h2>
-<a name="mjollnircoin" class="anchor" href="#mjollnircoin"><span class="octicon octicon-link"></span></a>Mjollnircoin</h2>
+<a name="mjollnircoin" class="anchor" href="#mjollnircoin"><span class="octicon octicon-link"></span></a>Countdown to launch:</h2>
+	</div>
+		<div>
+<script type="text/javascript">
+var myYr = new Date().getFullYear();
+var myMn = new Date().getMonth();
 
-<p>Mjollnir is a lite version of Bitcoin using scrypt-adaptive-N as a proof-of-work algorithm.</p>
+var myCountdownTest = new Countdown({
+       		          year    : myYr,
+   			  month   : {{page.mnr_countdown_m}}, 
+                          day     : {{page.mnr_countdown_d}},
+                          hour    : {{page.mnr_countdown_h}},
+			  ampm	  : "pm",
+                          width   : 500, 
+                          height  : 100,
+			  rangeHi : "month",
+			  hideLine: 1,
+			  numbers : {
+					font : "Arial",
+					color: "#212121",
+					bkgd : "#7e7676",
+					rounded: 0.17,
+					shadow: {
+						x:0, y: 3, s: 4, c : "#252525", a: 0.4
+						}
+				},
+			  labels: {
+					font : "Arial",
+					color: "#a8a8a8",
+					weight : "bold"
+				}
+                     });
+</script>
+			</div>
+		</div>
+	</section>
+</div>
+<script type="text/javascript">
+$(function () {
+$viewport = $('.viewport');
+var $tlt = $viewport.find('.tlt');
 
-<h3>
-<a name="technical-specification" class="anchor" href="#technical-specification"><span class="octicon octicon-link"></span></a>Technical specification</h3>
+$tlt.textillate(
+	{ 
+		in: { effect: 'rollIn' }, 
+ 		out: { effect: 'rollOut'},
+		autostart: true,
+		loop:true
+	});
+});
+</script>
 
-<ul>
-<li>Algorithm: Scrypt-Adaptive-Nfactor (Not scrypt-jane)</li>
-<li>Max Coins: 42 million mjollnircoins (42,000,000)</li>
-<li>Block time: 2.5 minutes</li>
-<li>Block retarget up: Every 10 blocks (max 100%)</li>
-<li>Block retarget down: Every block (max 400%)</li>
-<li>Block reward: 50 coins per block </li>
-<li>Multipool defense: Temporal retargeting</li>
-<li>Block halving: Every 420K blocks (~2 years)</li>
-</ul><h3>
-<a name="temporal-retargeting" class="anchor" href="#temporal-retargeting"><span class="octicon octicon-link"></span></a>Temporal retargeting</h3>
-
-<p>In order to withstand the difficulty fluctuations that would occur when automatic profit switching mining pools (multipools) hits Mjollnircoin, Mjollnir will begin to self-heal the network by lowering the difficulty if no block is found after a significant amount of time; The network will automatically recover from a multipool difficulty spike without emergency developer intervention within ~3 hours.</p>
-
-<h3>
-<a name="adaptive-nfactor-scrypt" class="anchor" href="#adaptive-nfactor-scrypt"><span class="octicon octicon-link"></span></a>Adaptive-NFactor SCRYPT</h3>
-
-<p>The adaptive N-factor applied is based on the timestamp of the generated blocks.
-Most SCRYPT cryptcoins use a fixed value.
-Mjollnircoin's N-factor begins at 11 and gradually increases over time according to the following schedule:</p>
-
-<table>
-<thead><tr>
-<th>N</th>
-<th>Memory</th>
-<th>Timestamp</th>
-<th>Date/Time</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>2048</td>
-<td>256 kB</td>
-<td>1389306217</td>
-<td>Thu, 09 Jan 2014 22:23:37 GMT</td>
-</tr>
-<tr>
-<td>4096</td>
-<td>512 kB</td>
-<td>1456415081</td>
-<td>Thu, 25 Feb 2016 15:44:41 GMT</td>
-</tr>
-<tr>
-<td>8192</td>
-<td>1 MB</td>
-<td>1506746729</td>
-<td>Sat, 30 Sep 2017 04:45:29 GMT</td>
-</tr>
-<tr>
-<td>16384</td>
-<td>2 MB</td>
-<td>1557078377</td>
-<td>Sun, 05 May 2019 17:46:17 GMT</td>
-</tr>
-<tr>
-<td>32768</td>
-<td>4 MB</td>
-<td>1657741673</td>
-<td>Wed, 13 Jul 2022 19:47:53 GMT</td>
-</tr>
-<tr>
-<td>65536</td>
-<td>8 MB</td>
-<td>1859068265</td>
-<td>Tue, 28 Nov 2028 23:51:05 GMT</td>
-</tr>
-<tr>
-<td>131072</td>
-<td>16 MB</td>
-<td>2060394857</td>
-<td>Tue, 17 Apr 2035 03:54:17 GMT</td>
-</tr>
-<tr>
-<td>262144</td>
-<td>32 MB</td>
-<td>2463048041</td>
-<td>Sun, 19 Jan 2048 12:00:41 GMT</td>
-</tr>
-<tr>
-<td>524288</td>
-<td>64 MB</td>
-<td>2999918953</td>
-<td>Fri, 23 Jan 2065 06:49:13 GMT</td>
-</tr>
-<tr>
-<td>1048576</td>
-<td>128 MB</td>
-<td>3536789865</td>
-<td>Wed, 28 Jan 2082 01:37:45 GMT</td>
-</tr>
-<tr>
-<td>2097152</td>
-<td>256 MB</td>
-<td>5684273513</td>
-<td>Mon, 16 Feb 2150 04:51:53 GMT</td>
-</tr>
-<tr>
-<td>4194304</td>
-<td>512 MB</td>
-<td>7831757161</td>
-<td>Sat, 07 Mar 2218 08:06:01 GMT</td>
-</tr>
-<tr>
-<td>8388608</td>
-<td>1 GB</td>
-<td>9979240809</td>
-<td>Thu, 25 Mar 2286 11:20:09 GMT</td>
-</tr>
-<tr>
-<td>16777216</td>
-<td>2 GB</td>
-<td>16421691753</td>
-<td>Fri, 19 May 2490 21:02:33 GMT</td>
-</tr>
-<tr>
-<td>33554432</td>
-<td>4 GB</td>
-<td>22864142697</td>
-<td>Sun, 15 Jul 2694 06:44:57 GMT</td>
-</tr>
-</tbody>
-</table><h3>
-<a name="developers" class="anchor" href="#developers"><span class="octicon octicon-link"></span></a>Developers</h3>
-      </section>
-
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
-  </body>
-</html>
+<!--[if !IE]><script>fixScale(document);</script><![endif]-->
+ 
