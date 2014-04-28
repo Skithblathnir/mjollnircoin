@@ -1,0 +1,12 @@
+Building Mjollnircoin
+
+See doc/readme-qt.rst for instructions on building Mjollnircoin-Qt,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Mjollnircoin.
+
+See doc/build-*.txt for instructions on building mjollnircoind,
+the intended-for-services, no-graphical-interface, reference
+implementation of Mjollnircoin.
+
+Further build information and documentation is available at
+the official Mjollnircoin website, http://brokkir.github.io/mjollnircoin

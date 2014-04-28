@@ -1,0 +1,6 @@
+mjollnircoin-qt usr/bin
+share/pixmaps/mjollnircoin32.xpm usr/share/pixmaps
+share/pixmaps/mjollnircoin16.xpm usr/share/pixmaps
+share/pixmaps/mjollnircoin128.png usr/share/pixmaps
+debian/mjollnircoin-qt.desktop usr/share/applications
+debian/mjollnircoin-qt.protocol usr/share/kde4/services/

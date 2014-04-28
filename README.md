@@ -2,15 +2,21 @@ Technical specification
 -----------------------
 Mjollnircoin is a decentralized digital currency that enables instant payments to anyone in the world; it is a lite version of Bitcoin using a redundant cryptographic function as a proof-of-work algorithm. Mjollnircoin is a people's currency, intended to be efficiently mined with consumer-grade hardware. It is ultra secure, ASIC resistant, Multipool resistant and rare with a total number of 42 million mjollnircoins.
 
+Mjollnircoin uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of mjollnircoins is carried out collectively by the network. There is no concept of ownership (nobody controls or owns the Mjollnircoin network) and there are no restrictions on who can take part. 
+
+- Algorithm: HEFTY1
 - Ultra secure: SHA-256, Keccak-512, Grøestl-512 & BLAKE-512
 - Max Coins: 42 million mjollnircoins (42,000,000)
-- Block time: 2.5 minutes
+- Block time: 2 minutes
 - Block re-target up: Every 10 blocks (Max 100%)
 - Block re-target down: Every block (Max 500%)
-- Block reward: 50 coins per block
-- Multipool defence: Temporal re-targeting
-- Block halving: Every 420K blocks (~2 years)
-- Multi-pool protection: Temporal-retargeting
+- First week reward: 125 MNR dropping to 50 MNR in 5.5 days
+- Weeks 2 - 21: 50 MNR
+- Block reward reduction: Every 11 days at a rate of 0.85%
+- Multipool protection: Temporal re-targeting
+- Mining: CPU and/or GPU
+- Features: Coin Control, QR Code support and UNPNP 
+
 
 For more information, as well as an immediately useable, binary version of
 the Mjollnircoin client sofware, see http://brokkir.github.io/mjollnircoin
