@@ -2,13 +2,18 @@
 layout: default
 title: Mjollnircoin Downloads
 name: wallet
-mnr_win32_filename: mjollnircoin-win32.zip
-mnr_win32_filelink: http://mjollnircoin-win32.zip
-mnr_macosx_filename: mjollnircoin-osx.dmg
-mnr_macosx_filelink: http://mjollnircoin-osx.dmg
-
-mnr_linux_filelink: wallet-linux.html
-mnr_linux_filename:  Releases for Linux
+mnr_win32_filelink: https://sourceforge.net/projects/mjollnircoin/files/mjollnircoin/Mjollnircoin-Win32.zip/download
+mnr_win32_filename: Mjollnircoin-Win32.zip
+mnr_win32_filename_sha: mjollnircoin-wallet-win32.7z.zip.checksum.txt
+mnr_ubuntu1404_filelink: https://sourceforge.net/projects/mjollnircoin/files/mjollnircoin/Mjollnircoin-Ubuntu14.04.7z.zip/
+mnr_ubuntu1404_filename: Mjollnircoin-Ubuntu14.04.7z.zip
+mnr_ubuntu1404_filename_sha: mjollnircoin-wallet-ubuntu14.7z.zip.checksum.txt
+mnr_ubuntu1304_filelink: https://sourceforge.net/projects/mjollnircoin/files/mjollnircoin/Mjollnircoin-Ubuntu13.04.7z.zip/download
+mnr_ubuntu1304_filename: Mjollnircoin-Ubuntu13.04.7z.zip
+mnr_ubuntu1304_filename_sha: mjollnircoin-wallet-ubuntu13.7z.zip.checksum.txt
+mnr_osx_filelink: http://sourceforge.net/projects/mjollnircoin/files/mjollnircoin/Mjollnircoin-MacOSX-7z.zip/download
+mnr_osx_filename: Mjollnircoin-MacOSX-7z.zip
+mnr_osx_filename_sha: mjollnircoin-wallet-osx.7z.zip.checksum.txt
 ---
 {% include top.html %}
 
@@ -17,29 +22,95 @@ mnr_linux_filename:  Releases for Linux
 
 <h2>Wallet Download</h2>
 <p>
-Here you will find the latest binary and source releases of Mjollnircoin once the Mining phase starts.
-The package will contain both mjollnircoin-qt and mjollnircoind.
+To be ready for Mjollnircoin Day, you can download password-protected wallet files here.
+The packages contain both the daemon and the Qt wallet.
+You can use 7zip to decrypt the files, using Mjollnir's Genesis Block hash as the password.
+The Genesis Block is committed to our git source code repository when the countdown timer ends.
 <p>
+You can download the full source of mjollnircoin here: <a href="${{page.mnr_github}}">www.github.com/brokkir</a>
+</p>
 
+<div>
+  <!-- windows -->
+   <div class="download">
+	<a class="downloadlink" href="{{page.mnr_win32_filelink}}">
+<span class="downloadicon">
 <img title="" src="images/windows.png"></img>
-<img title="" src="images/apple.png"></img>
-<img title="" src="images/ubuntu.png"></img>
-<img title="" src="images/linux.png"></img>
+</span>
+<span class="arrowdown">
+<img title="" src="images/arrowdown.png"></img>
+</span>
+DOWNLOAD<br>{{page.mnr_win32_filename}}<br>for Windows</a>
+	<a class="checksum" href="{{page.mnr_win32_filename_sha}}">
+<div class="checksumtext">SHA checksum</div></a>
 
-<br>
+  </div>
+</div>
+
+<div>
+  <!-- os x-->
+   <div class="download">
+	<a class="downloadlink" href="{{page.mnr_osx_filelink}}">
+<span class="downloadicon">
+<img title="" src="images/apple.png"></img>
+</span>
+<span class="arrowdown">
+<img title="" src="images/arrowdown.png"></img>
+</span>
+DOWNLOAD<br>{{page.mnr_osx_filename}}<br>for Mac OS X 10.8</a>
+	<a class="checksum" href="{{page.mnr_osx_filename_sha}}">
+<div class="checksumtext">SHA checksum</div></a>
+
+  </div>
+</div>
+
+<div>
+  <!-- ubuntu 13.04 -->
+   <div class="download">
+	<a class="downloadlink" href="{{page.mnr_ubuntu1304_filelink}}">
+<span class="downloadicon">
+<img title="" src="images/ubuntu.png"></img>
+</span>
+<span class="arrowdown">
+<img title="" src="images/arrowdown.png"></img>
+</span>
+DOWNLOAD<br>{{page.mnr_ubuntu1304_filename}}<br>for Ubuntu 13.04</a>
+	<a class="checksum" href="{{page.mnr_ubuntu1304_filename_sha}}">
+<div class="checksumtext">SHA checksum</div></a>
+
+  </div>
+</div>
+
+<div>
+  <!-- ubuntu 14.04 -->
+   <div class="download">
+	<a class="downloadlink" href="{{page.mnr_ubuntu1404_filelink}}">
+<span class="downloadicon">
+<img title="" src="images/ubuntu.png"></img>
+</span>
+<span class="arrowdown">
+<img title="" src="images/arrowdown.png"></img>
+</span>
+DOWNLOAD<br>{{page.mnr_ubuntu1404_filename}}<br>for Ubuntu 14.04</a>
+	<a class="checksum" href="{{page.mnr_ubuntu1404_filename_sha}}">
+<div class="checksumtext">SHA checksum</div></a>
+
+  </div>
+</div>
+
 </section>
 
 <section>
 <h2>CPU Miner</h2>
 <p>
-You can find our CPU miner <a href="download-miner.html">here</a>
+You can find the CPU miner <a href="download-miner.html">here</a>
 </p>
 </section>
 
 <section>
 <h2>KeyPair and Address Tool</h2>
 <p>
-You can find our KeyPair and Address Tool <a href="download-genkeys.html">here</a>
+You can find the KeyPair and Address Tool <a href="download-genkeys.html">here</a>
 <p>
 
 </section>

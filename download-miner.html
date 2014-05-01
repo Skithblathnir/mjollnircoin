@@ -3,14 +3,14 @@ layout: default
 title: Mjollnircoin CPU Miner Downloads
 name: cpuminer
 miner_win32_filename: cpuminer-win32.zip
-miner_win32_filelink: http://cpuminer-win32.zip
-miner_linux_filename: cpuminer-0.8.deb
-miner_linux_filelink: http://cpuminer-0.8.deb
-miner_source_filename: cpu-miner-0.8.tar.gz
-miner_source_filelink: http://cpuminer-0.8.tar.gz
-miner_osx_filename: cpu-miner-0.8.dmg
-miner_osx_filelink: http://cpuminer-0.8.dmg
-
+miner_win32_filelink: https://sourceforge.net/projects/mjollnircoin/files/mjollnircoin-cpuminer/cpuminer-win32.zip/download
+miner_win32_filename_sha: cpuminer-win32.zip.sha.txt
+miner_ubuntu1304_filename: cpuminer-ubuntu13.04.zip
+miner_ubuntu1304_filelink:  https://sourceforge.net/projects/mjollnircoin/files/mjollnircoin-cpuminer/cpuminer-ubuntu13.04.zip/download
+miner_ubuntu1304_filename_sha: cpuminer-ubuntu13.04.zip.sha.txt
+miner_ubuntu1404_filename: cpuminer-ubuntu14.04.zip
+miner_ubuntu1404_filename_sha: cpuminer-ubuntu14.04.zip.sha.txt
+miner_ubuntu1404_filelink:  https://sourceforge.net/projects/mjollnircoin/files/mjollnircoin-cpuminer/cpuminer-ubuntu14.04.zip/download
 ---
 {% include top.html %}
 
@@ -20,20 +20,59 @@ miner_osx_filelink: http://cpuminer-0.8.dmg
 <a name="cpuminer"></a>
 <h2>CPU Miner Download</h2>
 <p>
-Here you will find the latest binary and source releases of the CPU miner for Mjollnircoin
-</p>
-<p>
-The binaries of the CPU miner will be launched on the 3rd of May 2014
-</p>
-<p>
 Sourcecode repository (clone URL): <a href="https://github.com/brokkir/mjollnircoin-project">https://github.com/brokkir/mjollnircoin-project</a>
 </p>
-
+<div>
+  <!-- windows -->
+   <div class="download">
+	<a class="downloadlink" href="{{page.miner_win32_filelink}}">
+<span class="downloadicon">
 <img title="" src="images/windows.png"></img>
-<img title="" src="images/apple.png"></img>
+</span>
+<span class="arrowdown">
+<img title="" src="images/arrowdown.png"></img>
+</span>
+DOWNLOAD<br>{{page.miner_win32_filename}}<br>for Windows</a>
+	<a class="checksum" href="{{page.miner_win32_filename_sha}}">
+<div class="checksumtext">SHA checksum</div></a>
+
+  </div>
+</div>
+
+
+<div>
+  <!-- ubuntu 13.04 -->
+   <div class="download">
+	<a class="downloadlink" href="{{page.miner_ubuntu1304_filelink}}">
+<span class="downloadicon">
 <img title="" src="images/ubuntu.png"></img>
-<img title="" src="images/linux.png"></img>
-<br>
+</span>
+<span class="arrowdown">
+<img title="" src="images/arrowdown.png"></img>
+</span>
+DOWNLOAD<br>{{page.miner_ubuntu1304_filename}}<br>for Ubuntu 13.04</a>
+	<a class="checksum" href="{{page.miner_ubuntu1304_filename_sha}}">
+<div class="checksumtext">SHA checksum</div></a>
+
+  </div>
+</div>
+
+<div>
+  <!-- ubuntu 14.04 -->
+   <div class="download">
+	<a class="downloadlink" href="{{page.miner_ubuntu1404_filelink}}">
+<span class="downloadicon">
+<img title="" src="images/ubuntu.png"></img>
+</span>
+<span class="arrowdown">
+<img title="" src="images/arrowdown.png"></img>
+</span>
+DOWNLOAD<br>{{page.miner_ubuntu1404_filename}}<br>for Ubuntu 14.04</a>
+	<a class="checksum" href="{{page.miner_ubuntu1404_filename_sha}}">
+<div class="checksumtext">SHA checksum</div></a>
+
+  </div>
+</div>
 </section>
 
 <!--[if !IE]><script>fixScale(document);</script><![endif]-->
