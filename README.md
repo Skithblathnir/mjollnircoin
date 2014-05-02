@@ -4,23 +4,45 @@ Mjollnircoin is a decentralized digital currency that enables instant payments t
 
 Mjollnircoin uses peer-to-peer technology to operate with no central authority or banks; managing transactions and the issuing of mjollnircoins is carried out collectively by the network. There is no concept of ownership (nobody controls or owns the Mjollnircoin network) and there are no restrictions on who can take part. 
 
-- Algorithm: HEFTY1
+- Algorithm: HEFTY1-V (ASIC-resistant)
 - Ultra secure: SHA-256, Keccak-512, Grøestl-512 & BLAKE-512
-- Max Coins: 42 million mjollnircoins (42,000,000)
+- Total supply: 42 million mjollnircoins (42,000,004)
 - Block time: 2 minutes
 - Block re-target up: Every 10 blocks (Max 100%)
 - Block re-target down: Every block (Max 500%)
 - First week reward: 125 MNR dropping to 50 MNR in 5.5 days
-- Weeks 2 - 21: 50 MNR
-- Block reward reduction: Every 11 days at a rate of 0.85%
-- Multipool protection: Temporal re-targeting
-- Mining: CPU and/or GPU
-- Features: Coin Control, QR Code support and UNPNP 
+- Weeks 2 -21: 50 MNR
+- Block reduction after week 21: Slow steady decrease of 0.85% every 11 days
+- Multipool defence: Temporal re-targeting
+- Starting block reward: Increased for the first 4000 blocks
+- Multipool protection: Temporal Retargeting
+- Premine: 0.5% for public fundraiser (210.000 MNR)
+- Mining: CPU and GPU
+- Features: Coin Control,QR Code support and UPNP
 
 
 For more information, as well as an immediately useable, binary version of
 the Mjollnircoin client sofware, see http://brokkir.github.io/mjollnircoin
 
+Mining
+------
+
+Mjollnircoin Mining Launch is the 3rd of May, 2014
+We have increased the block reward for the first 4000 blocks:
+
+- block 2 - 1000 : 125 MNR
+- block 1000 - 2000 : 100 MNR
+- block 2000 - 4000 : 75 MNR
+- block 4000 - 117600: 50 MNR
+- block 117600 - 126000: 49.57500076 MNR
+- block 126000 - 134400: 49.15361404 MNR
+- block 134400 - 142800: 48.73580933 MNR
+- block 411600 - 420000: 36.77121353 MNR
+- block 621600 - 630000: 29.70474625 MNR
+- block 1394400 - 1397477: 13.54428577 MNR
+
+The Genesis Block is left to Cyberspace and it can have no transactions.
+The second block (#1) is the IPO total coin supply (210,000)
 
 
 Temporal re-targeting
