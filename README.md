@@ -41,7 +41,7 @@ The block reward starts at 125 MNR and decreases to 50 MNR in the first 4000 blo
     block 621600 - 630000: 29.70474625 MNR
     block 1394400 - 1397477: 13.54428577 MNR
 
-- The Genesis Block can have no transactions.
+- The Genesis Block is unspendable
 - The second block (#1) is the IPO total coin supply (210,000)
 
 
