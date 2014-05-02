@@ -28,21 +28,21 @@ Mining
 ------
 
 Mjollnircoin Mining Launch is the 3rd of May, 2014
-We have increased the block reward for the first 4000 blocks:
+The block reward starts at 125 MNR and decreases to 50 MNR in the first 4000 blocks (aprox. 5.5 days)
 
-- block 2 - 1000 : 125 MNR
-- block 1000 - 2000 : 100 MNR
-- block 2000 - 4000 : 75 MNR
-- block 4000 - 117600: 50 MNR
-- block 117600 - 126000: 49.57500076 MNR
-- block 126000 - 134400: 49.15361404 MNR
-- block 134400 - 142800: 48.73580933 MNR
-- block 411600 - 420000: 36.77121353 MNR
-- block 621600 - 630000: 29.70474625 MNR
-- block 1394400 - 1397477: 13.54428577 MNR
+    block 2 - 1000 : 125 MNR
+    block 1000 - 2000 : 100 MNR
+    block 2000 - 4000 : 75 MNR
+    block 4000 - 117600: 50 MNR
+    block 117600 - 126000: 49.57500076 MNR
+    block 126000 - 134400: 49.15361404 MNR
+    block 134400 - 142800: 48.73580933 MNR
+    block 411600 - 420000: 36.77121353 MNR
+    block 621600 - 630000: 29.70474625 MNR
+    block 1394400 - 1397477: 13.54428577 MNR
 
-The Genesis Block is left to Cyberspace and it can have no transactions.
-The second block (#1) is the IPO total coin supply (210,000)
+- The Genesis Block can have no transactions.
+- The second block (#1) is the IPO total coin supply (210,000)
 
 
 Temporal re-targeting
