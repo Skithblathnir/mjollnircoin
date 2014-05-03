@@ -39,9 +39,10 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x0000000000000000000000000000000000000000000000000000000000000000");
+uint256 hashGenesisBlock("0x0000081e3e89ddeb3f0bc9793c073ef55fe2b9a61f5c5ac79e965b3790ae3abd");
+// Wallet is encrypted with Testnet (!) Genesis Block: 0000164581af83405764a6030f3ec631daee10258a47da30826e186e2aedab43
+
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 16);
-//static CBigNum bnProofOfWorkLimit(uint256(0));
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
 uint256 nBestChainWork = 0;
@@ -56,7 +57,7 @@ bool fReindex = false;
 bool fBenchmark = false;
 bool fTxIndex = false;
 unsigned int nCoinCacheSize = 5000;
-int64 nChainStartTime = 1393164023; // Line: 2815
+int64 nChainStartTime = 1398816000; // Line: 2815
 
 /** Fees smaller than this (in satoshi) are considered zero fee (for transaction creation) */
 int64 CTransaction::nMinTxFee = 100000;
@@ -1098,11 +1099,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 	if( nHeight == 1 ) {
 		nSubsidy = 210000 * COIN;	
 	} 
-	else if( nHeight == 2 ) {
-		nSubsidy = 125 * COIN;
-	}
-	else if( nHeight < 1000 )
-	{
+	else if( nHeight < 1000 ) {
 		nSubsidy = 125  * COIN;
 	}
 	else if ( nHeight < 2000 )
@@ -1165,7 +1162,7 @@ reward: 1354428544 (13.54428577) nHeight 1394400
 
 
 		*/	
-		nSubsidy = getDevaluatedBlock( 0.0085f, (nHeight - 105840)/8400 );
+		nSubsidy = GetDevaluatedBlock( 0.0085f, (nHeight - 105840)/8400 );
 
 	}
 
@@ -2923,7 +2920,8 @@ bool LoadBlockIndex()
         pchMessageStart[1] = 'j';
         pchMessageStart[2] = 'l';
         pchMessageStart[3] = 'r';
-	hashGenesisBlock = uint256("0x0000000000000000000000000000000000000000000000000000000000000000");
+
+	hashGenesisBlock = uint256("0x0000164581af83405764a6030f3ec631daee10258a47da30826e186e2aedab43");
     }
 
     //
@@ -2950,61 +2948,62 @@ bool InitBlockIndex() {
     if (!fReindex) {
 
         // Genesis block
-        const char* pszTimestamp = "06/05/2014 https://bitcointalk.org/index.php?topic=577437.0";
+        const char* pszTimestamp = "04/28/2014 The changing colors of the Universe";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 0 << CBigNum(999) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 50 * COIN;
-        txNew.vout[0].scriptPubKey = CScript();
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("0415bbddf1fcd4caa58ae23fcd48774b7fe73c86b76dce4b6d580bda008c7eb4e0f879ceca63a0c6df09f567948f08cb512091a6b4a7bc1ad4db602246bfefcd84") << OP_CHECKSIG;
 
         CBlock block;
         block.vtx.push_back(txNew);
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nBits    = 0; 
-        block.nNonce   = 0;
-        block.nTime    = 0;
-        
+        block.nBits    = 0x1e1fffe0; // 1f00ffff
+        block.nNonce   = 17696495;
+        block.nTime    = 1398818354;
+
         if (fTestNet)
         {
-            block.nNonce = 0;
-            block.nTime = 0;
+	    block.nNonce = 17779472;
+            block.nTime  = 1398819600;
         }
-   	
-	uint256 hash = block.GetHash();
+
+        uint256 hash = block.GetHash();
 
 	printf("merkle prehash  %s\n", block.hashMerkleRoot.ToString().c_str());
 	printf("hash    0x%s\n", hash.ToString().c_str());
         printf("genesis 0x%s\n", hashGenesisBlock.ToString().c_str());
         printf("merkle  0x%s\n", block.hashMerkleRoot.ToString().c_str());
+	
+	assert( block.hashMerkleRoot ==
+		uint256("0xa7d28544f9eda4587beffa2f39e0b5250f261695cbed8ef0a525519569386e5b")); 
 
-	assert( block.hashMerkleRoot == uint256("0x0000000000000000000000000000000000000000000000000000000000000000"));
-		
   	// If genesis block hash does not match, then generate new genesis hash.
    	if ( false && block.GetHash() != hashGenesisBlock)
 	{
        		printf("Searching for new genesis block...\n");
         	// This will figure out a valid hash and Nonce if you're
-        	// creating a different genesis block:
-        	uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();
+       		// creating a different genesis block:
+       		uint256 hashTarget = CBigNum().SetCompact(block.nBits).getuint256();
         	uint256 thash;
   	     
 		uint64 tStart = GetTimeMillis();
 
    		while(true)
-      	  	{
+      		{
  			thash = block.GetHash();
-                	if (thash <= hashTarget)
-               			break;
-                	if ((block.nNonce & 0xFFFFF) == 0)
+			if (thash <= hashTarget)
+				break;
+                
+			if ((block.nNonce & 0xFFFFF) == 0)
                 	{
-                    		printf("    Search: nonce %08x hash %s\n",block.nNonce, thash.ToString().c_str());
+                	    printf("    Search: nonce %08x hash %s\n",block.nNonce, thash.ToString().c_str());
                 	}
                 	++block.nNonce;
-                
-			if (block.nNonce == 0)
+                	if (block.nNonce == 0)
                 	{
                     		printf("    Nonce wrapped: incrementing time\n");
                     		++block.nTime;
@@ -3013,7 +3012,7 @@ bool InitBlockIndex() {
 
             	if (CheckProofOfWork(thash, block.nBits)) {
                		printf("* Solved genesis block! nonce %u hash 0x%s time %u\n",block.nNonce, thash.ToString().c_str(), block.nTime);
-                	printf("* Mining took %"PRI64d" minutes\n", (GetTimeMillis() - tStart)/60000);
+               		printf("* Mining took %"PRI64d" minutes\n", (GetTimeMillis() - tStart)/60000);
             	}
         }
 
@@ -3023,7 +3022,9 @@ bool InitBlockIndex() {
   	printf("min nBit:  %08x\n", bnProofOfWorkLimit.GetCompact());
 
 	block.print();
+
 	assert(hash == hashGenesisBlock);
+
         // Start new block file
         try {
             unsigned int nBlockSize = ::GetSerializeSize(block, SER_DISK, CLIENT_VERSION);
