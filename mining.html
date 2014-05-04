@@ -7,6 +7,10 @@ mnr_countdown_m: 5
 mnr_countdown_d: 3 
 mnr_countdown_h: 00
 mnr_cpuminer_link: download-miner.html
+mnr_cgminer_link: https://github.com/reorder/cgminer_heavy
+mnr_ccminer_link: https://github.com/cbuchner1/CudaMiner
+
+
 ---
 {% include top.html %}
 
@@ -21,7 +25,7 @@ The first 21 weeks the block reward is set to 50 MNR, after which the block rewa
 The first week of Mjollnir is special, then the starting block reward is 125 and is lowered to 50 MNR in ~5.5 days.
 Mjollnircoin will take aprox. 1800 days to complete mining.
 <ul>
- <li>block       2 -    1000: 125 MNR</li>
+ <li>block       1 -    1000: 125 MNR</li>
  <li>block    1000 -    2000: 100 MNR</li>
  <li>block    2000 -    4000: 75 MNR</li>
  <li>block    4000 -  117600: 50 MNR</li>
@@ -41,7 +45,7 @@ Mjollnircoin will take aprox. 1800 days to complete mining.
 <ol>
  <li>Get the <a href="wallet.html">Mjollnircoin Wallet</a></li>
  <li>Edit the <a href="#config">configuration</a></li>
- <li style="color:#d0d0d0;">Get the  <a href="{{page.mnr_cpuminer_link}}">cpu-miner</a> or use the built-in miner</li>
+ <li style="color:#d0d0d0;">Get the  <a href="{{page.mnr_cpuminer_link}}">cpu-miner</a>, <a href="{{page.mnr_ccminer_link}}">cudaminer</a>, <a href="{{page.mnr_cgminer_link}}">cgminer</a> or use the built-in miner</li>
  <li>Point the miner to your wallet</li>
  <li><a href="#mjollnircoinsolo">Start mining</a></li>
 </ol>
@@ -108,7 +112,7 @@ To see information about mining, type the following command:
 </ul>
 <pre style="color:#dfdfdf;">
 
-minerd.exe -a heavy -o 127.0.0.1:18320 -u username -p password -t1
+minerd.exe -a mjollnir -o 127.0.0.1:18320 -u username -p password -t1
 
 </pre>
 <ul>
@@ -116,7 +120,7 @@ minerd.exe -a heavy -o 127.0.0.1:18320 -u username -p password -t1
 </ul>
 <pre style="color:#dfdfdf;">
 
-./minerd -a heavy -o 127.0.0.1:18320 -u username -p password -t1
+./minerd -a mjollnir -o 127.0.0.1:18320 -u username -p password -t1
 
 </pre>
 <ul>
