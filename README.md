@@ -27,7 +27,7 @@ the Mjollnircoin client sofware, see http://brokkir.github.io/mjollnircoin
 Mining
 ------
 
-Mjollnircoin Mining Launch is the 3rd of May, 2014
+Mjollnircoin Mining Launch is the 4th of May, 2014 at 14:00 CEST
 The block reward starts at 125 MNR and decreases to 50 MNR in the first 4000 blocks (aprox. 5.5 days)
 
     block 2 - 1000 : 125 MNR
