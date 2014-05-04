@@ -20,7 +20,6 @@
 
 using namespace std;
 using namespace boost;
-
 extern double CalcDifficulty(const unsigned int nBits);
 extern double GetDifficulty(const CBlockIndex* blockindex = NULL);
 
@@ -39,8 +38,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x0000081e3e89ddeb3f0bc9793c073ef55fe2b9a61f5c5ac79e965b3790ae3abd");
-// Wallet is encrypted with Testnet (!) Genesis Block: 0000164581af83405764a6030f3ec631daee10258a47da30826e186e2aedab43
+uint256 hashGenesisBlock("0x00000a44fc2a11bc0f2f4482d46146204dec745ebb751274a0fdcc3757f4302c");
 
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 16);
 CBlockIndex* pindexGenesisBlock = NULL;
@@ -57,7 +55,7 @@ bool fReindex = false;
 bool fBenchmark = false;
 bool fTxIndex = false;
 unsigned int nCoinCacheSize = 5000;
-int64 nChainStartTime = 1398816000; // Line: 2815
+int64 nChainStartTime = 1398818200;
 
 /** Fees smaller than this (in satoshi) are considered zero fee (for transaction creation) */
 int64 CTransaction::nMinTxFee = 100000;
@@ -1096,10 +1094,7 @@ inline int64_t GetDevaluatedBlock( float rate, int nCycle )
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
 	int64 nSubsidy = 0;
-	if( nHeight == 1 ) {
-		nSubsidy = 210000 * COIN;	
-	} 
-	else if( nHeight < 1000 ) {
+	if( nHeight < 1000 ) {
 		nSubsidy = 125  * COIN;
 	}
 	else if ( nHeight < 2000 )
@@ -1797,12 +1792,12 @@ bool CBlock::ConnectBlock(CValidationState &state, CBlockIndex* pindex, CCoinsVi
 
     // Special case for the genesis block, skipping connection of its transactions
     // (its coinbase is unspendable)
-    if (GetHash() == hashGenesisBlock) {
+ /*   if (GetHash() == hashGenesisBlock) {
         view.SetBestBlock(pindex);
         pindexGenesisBlock = pindex;
         return true;
-    }
-
+    }*/
+   
     bool fScriptChecks = pindex->nHeight >= Checkpoints::GetTotalBlocksEstimate();
 
     // Do not allow blocks that contain transactions which 'overwrite' older transactions,
@@ -1889,13 +1884,11 @@ bool CBlock::ConnectBlock(CValidationState &state, CBlockIndex* pindex, CCoinsVi
     int64 nTime = GetTimeMicros() - nStart;
     if (fBenchmark)
         printf("- Connect %u transactions: %.2fms (%.3fms/tx, %.3fms/txin)\n", (unsigned)vtx.size(), 0.001 * nTime, 0.001 * nTime / vtx.size(), nInputs <= 1 ? 0 : 0.001 * nTime / (nInputs-1));
-
     if (GetHash() != hashGenesisBlock) {
         // Genesis block is special
         if (vtx[0].GetValueOut() > GetBlockValue(pindex->nHeight, nFees))
             return state.DoS(100, error("ConnectBlock() : coinbase pays too much (actual=%"PRI64d" vs limit=%"PRI64d")", vtx[0].GetValueOut(), GetBlockValue(pindex->nHeight, nFees)));
     }
-
 
     if (!control.Wait())
         return state.DoS(100, false);
@@ -1910,7 +1903,7 @@ bool CBlock::ConnectBlock(CValidationState &state, CBlockIndex* pindex, CCoinsVi
     if (pindex->GetUndoPos().IsNull() || (pindex->nStatus & BLOCK_VALID_MASK) < BLOCK_VALID_SCRIPTS)
     {
         if (pindex->GetUndoPos().IsNull() && *pindex->phashBlock != hashGenesisBlock) {
-            CDiskBlockPos pos;
+	    CDiskBlockPos pos;
             if (!FindUndoPos(state, pindex->nFile, pos, ::GetSerializeSize(blockundo, SER_DISK, CLIENT_VERSION) + 40))
                 return error("ConnectBlock() : FindUndoPos failed");
             if (!blockundo.WriteToDisk(pos, pindex->pprev->GetBlockHash()))
@@ -2305,10 +2298,11 @@ bool CBlock::CheckBlock(CValidationState &state, bool fCheckPOW, bool fCheckMerk
     // First transaction must be coinbase, the rest must not be
     if (vtx.empty() || !vtx[0].IsCoinBase())
         return state.DoS(100, error("CheckBlock() : first tx is not coinbase"));
-    for (unsigned int i = 1; i < vtx.size(); i++)
+    if (GetHash() != hashGenesisBlock) { // Genesis may have multiple coinbases
+      for (unsigned int i = 1; i < vtx.size(); i++)
         if (vtx[i].IsCoinBase())
             return state.DoS(100, error("CheckBlock() : more than one coinbase"));
-
+	}
     // Check transactions
     BOOST_FOREACH(const CTransaction& tx, vtx)
         if (!tx.CheckTransaction(state))
@@ -2921,7 +2915,7 @@ bool LoadBlockIndex()
         pchMessageStart[2] = 'l';
         pchMessageStart[3] = 'r';
 
-	hashGenesisBlock = uint256("0x0000164581af83405764a6030f3ec631daee10258a47da30826e186e2aedab43");
+	hashGenesisBlock = uint256("0x0000170721e5acc3067f6193b7d6b2ee3023664e43ae00f441c159db9aef78f7");
     }
 
     //
@@ -2950,11 +2944,12 @@ bool InitBlockIndex() {
         // Genesis block
         const char* pszTimestamp = "04/28/2014 The changing colors of the Universe";
         CTransaction txNew;
-        txNew.vin.resize(1);
-        txNew.vout.resize(1);
-        txNew.vin[0].scriptSig = CScript() << 0 << CBigNum(999) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 50 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("0415bbddf1fcd4caa58ae23fcd48774b7fe73c86b76dce4b6d580bda008c7eb4e0f879ceca63a0c6df09f567948f08cb512091a6b4a7bc1ad4db602246bfefcd84") << OP_CHECKSIG;
+	txNew.vin.resize(1);
+	txNew.vout.resize(1);
+        txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
+	
+        txNew.vout[0].nValue = 210000 * COIN;
+	txNew.vout[0].scriptPubKey = CScript() << ParseHex("0427f6049984f779586b9a2835714b79bf4284111cd5248b30b408087ae375bd45918fb4b14325a494208932e8d41c02cf1e3327a5b8077993b35e397eaab674c7") << OP_CHECKSIG;
 
         CBlock block;
         block.vtx.push_back(txNew);
@@ -2962,13 +2957,13 @@ bool InitBlockIndex() {
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
         block.nBits    = 0x1e1fffe0; // 1f00ffff
-        block.nNonce   = 17696495;
+        block.nNonce   = 18528392;
         block.nTime    = 1398818354;
 
         if (fTestNet)
         {
-	    block.nNonce = 17779472;
-            block.nTime  = 1398819600;
+	    block.nNonce = 18843094;
+            block.nTime  = 1398818454;
         }
 
         uint256 hash = block.GetHash();
@@ -2978,10 +2973,9 @@ bool InitBlockIndex() {
         printf("genesis 0x%s\n", hashGenesisBlock.ToString().c_str());
         printf("merkle  0x%s\n", block.hashMerkleRoot.ToString().c_str());
 	
-	assert( block.hashMerkleRoot ==
-		uint256("0xa7d28544f9eda4587beffa2f39e0b5250f261695cbed8ef0a525519569386e5b")); 
+	assert( block.hashMerkleRoot == uint256("0xf89c947af6a1b2be07490beac071c5b1545ad4ebc9312cadd412f2b3e25530c8"));
 
-  	// If genesis block hash does not match, then generate new genesis hash.
+  	// If genesis block hash does not match, then generate new genesis hash
    	if ( false && block.GetHash() != hashGenesisBlock)
 	{
        		printf("Searching for new genesis block...\n");
