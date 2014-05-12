@@ -11,11 +11,10 @@ Mjollnircoin uses peer-to-peer technology to operate with no central authority o
 - Block re-target up: Every 10 blocks (Max 100%)
 - Block re-target down: Every block (Max 500%)
 - First week reward: 125 MNR dropping to 50 MNR in 5.5 days
-- Weeks 2 -21: 50 MNR
+- Weeks 2 - 21: 50 MNR
 - Block reduction after week 21: Slow steady decrease of 0.85% every 11 days
 - Multipool defence: Temporal re-targeting
 - Starting block reward: Increased for the first 4000 blocks
-- Multipool protection: Temporal Retargeting
 - Premine: 0.5% for public fundraiser (210.000 MNR)
 - Mining: CPU and GPU
 - Features: Coin Control,QR Code support and UPNP
@@ -27,10 +26,10 @@ the Mjollnircoin client sofware, see http://brokkir.github.io/mjollnircoin
 Mining
 ------
 
-Mjollnircoin Mining Launch is the 4th of May, 2014 at 14:00 CEST
-The block reward starts at 125 MNR and decreases to 50 MNR in the first 4000 blocks (aprox. 5.5 days)
+Mjollnircoin Mining Launch was the 4th of May, 2014 at 14:00 CEST
+The block reward started at 125 MNR and has decreased to 50 MNR in 4000 blocks 
 
-    block 2 - 1000 : 125 MNR
+    block 1 - 1000 : 125 MNR
     block 1000 - 2000 : 100 MNR
     block 2000 - 4000 : 75 MNR
     block 4000 - 117600: 50 MNR
@@ -41,8 +40,7 @@ The block reward starts at 125 MNR and decreases to 50 MNR in the first 4000 blo
     block 621600 - 630000: 29.70474625 MNR
     block 1394400 - 1397477: 13.54428577 MNR
 
-- The Genesis Block is unspendable
-- The second block (#1) is the IPO total coin supply (210,000)
+- The IPO total coin supply (210,000) is hardcoded in the Genesis Block
 
 
 Temporal re-targeting
@@ -73,7 +71,43 @@ Coin-control allows you to choose which of your addresses will be the sending ad
 - Allows you to select sending addresses (rather than client)
 
 
+Binaries
+--------
 
+Pre-compiled binaries for Windows, Mac OS X and Ubuntu are available here:
+http://brokkir.github.io/mjollnircoin/wallet.html
+
+
+Social
+------
+
+  - Main Thread: https://bitcointalk.org/index.php?topic=577437.0 
+  - https://cryptocointalk.com/forum/1280-mjollnircoin-mnr/ 
+  - IRC channel #MNRCOIN at FreeNode
+
+Mining Pools
+------------
+    
+- http://mnr.1gh.com/ 
+- http://mnr.nonce-pool.com 
+- http://mnr.suprnova.cc
+
+
+Miners
+-------
+    
+- CPU miner https://github.com/brokkir/mjollnircoin-project
+- CGMiner https://github.com/reorder/cgminer_heavy 
+- CGMiner binary for Windows at http://mnrdl.1gh.com/cgminer-hefty-2014-05-04.zip
+- ccminer https://github.com/cbuchner1/ccminer/releases 
+
+
+
+Exchanges
+---------
+    
+- www.cryptoaltex.com
+- www.MintPal.com (currently in voting stage)
 
 
 License
@@ -84,13 +118,12 @@ information or see http://opensource.org/licenses/MIT.
 
 
 
-
-
 http://brokkir.github.io/mjollnircoin
 
 Copyright (c) 2009-2013 Bitcoin Developers
 Copyright (c) 2011-2013 Litecoin Developers
 Copyright (c) 2014 Vertcoin Developers
+Copyright (c) 2014 Heavycoin Developers
 Copyright (c) 2014 Mjollnircoin Developers
 
 
