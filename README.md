@@ -23,8 +23,9 @@ Technical specification
 - Features: Coin Control,QR Code support and UPNP
 
 For more information, as well as an immediately useable, binary version of
-the Mjollnircoin client sofware, see http://brokkir.github.io/mjollnircoin
+the Mjollnircoin client sofware, see http://sourceforge.net/projects/mjollnircoin/files/mjollnircoin-wallet/
 
+Mjollnircoin was first announced at https://bitcointalk.org/index.php?topic=577437.0
 
 Mining
 ------
