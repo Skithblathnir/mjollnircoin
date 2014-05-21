@@ -39,8 +39,22 @@ Mjollnircoin will take aprox. 1800 days to complete mining.
 </p>
 
 <h2>
+<a name="miningpool-mjollnircoin" class="anchor" href="#miningpools-mjollnircoin">
+<span class="octicon octicon-link"></span></a>Mjollnircoin Mining Pools</h2>
+<p>
+Below you find a list of pools, some of them require user registration.
+If you have a mining rig, please consider to add your hashing power to the least strong pool
+<ul>
+ <li><a href="http://mnr.1gh.com/">mnr.1gh.com</a></li>
+ <li><a href="http://mnr.nonce-pool.com">mnr.nonce-pool.com</a></li>
+ <li><a href="http://mnr.suprnova.cc">mnr.suprnova.cc</a></li>
+</ul>
+</p>
+
+
+<h2>
 <a name="mine-mjollnircoin" class="anchor" href="#mine-mjollnircoin">
-<span class="octicon octicon-link"></span></a>Getting Started</h2>
+<span class="octicon octicon-link"></span></a>Getting Started - Solo Mining</h2>
 <p>
 <ol>
  <li>Get the <a href="wallet.html">Mjollnircoin Wallet</a></li>
@@ -48,6 +62,19 @@ Mjollnircoin will take aprox. 1800 days to complete mining.
  <li style="color:#d0d0d0;">Get the  <a href="{{page.mnr_cpuminer_link}}">cpu-miner</a>, <a href="{{page.mnr_ccminer_link}}">ccminer</a>, <a href="{{page.mnr_cgminer_link}}">cgminer</a> or use the built-in miner</li>
  <li>Point the miner to your wallet</li>
  <li><a href="#mjollnircoinsolo">Start mining</a></li>
+</ol>
+</p>
+
+
+<h2>
+<a name="mine-mjollnircoin" class="anchor" href="#mine-mjollnircoin">
+<span class="octicon octicon-link"></span></a>Getting Started - Pool Mining</h2>
+<p>
+<ol>
+ <li>Get the <a href="wallet.html">Mjollnircoin Wallet</a></li>
+ <li>Register yourself at one of the pools, fill in the account details (and set automatic pay-out), create a worker and read the getting started webpage of the pool</li>
+ <li style="color:#d0d0d0;">Get the  <a href="{{page.mnr_cpuminer_link}}">cpu-miner</a>, <a href="{{page.mnr_ccminer_link}}">ccminer</a> (for NVIDIA) or <a href="{{page.mnr_cgminer_link}}">cgminer</a> (for AMD)</li>
+ <li>Point the miner to the pool</li>
 </ol>
 </p>
 
@@ -65,7 +92,7 @@ Edit your <b>mjollnircoin.conf</b> file or create a new one.
  <li>Windows: C:\Users\Username\Appdata\Roaming\Mjollnircoin\mjollnircoin.conf</li>
 </ol>
 
-Edit or add the following lines:
+Edit or add the following lines for solo mining:
 <pre style="color:#dfdfdf;">
 
    rpcpassword=Your_Password_Change_It
@@ -131,53 +158,12 @@ minerd.exe -a mjollnir -o 127.0.0.1:18320 -u username -p password -t1
 
 <h2>
 <a name="mine-mjollnircoin" class="anchor" href="#mine-mjollnircoin">
-<span class="octicon octicon-link"></span></a>Mining Pools</h2>
+<span class="octicon octicon-link"></span></a>Tweak your miner</h2>
 <p>
-None available
+You can read (and comment) on tweaking the miners <a href="http://www.reddit.com/r/Mjollnircoin/comments/24wktf/mjollnircoin_tune_your_miner/">here</a>
 </p>
 </section>
 
-<section>
-<h2>
-<a name="mjollnircoinsolo" class="anchor" href="#mine-mjollnircoin">
-<span class="octicon octicon-link"></span></a>Mining Launch in:</h2>
-           <div class="timer">
-			<div>
-<script type="text/javascript">
-var myYr = new Date().getFullYear();
-var myMn = new Date().getMonth();
-
-var myCountdownTest = new Countdown({
-                          year    : myYr,
-                          month   : {{page.mnr_countdown_m}}, 
-                          day     : {{page.mnr_countdown_d}},
-                          hour    : {{page.mnr_countdown_h}},
-                          ampm    : "pm",
-                          width   : 500, 
-                          height  : 100,
-                          rangeHi : "month",
-                          hideLine: 1,
-                          numbers : {
-                                        font : "Arial",
-                                        color: "#212121",
-                                        bkgd : "#7e7676",
-                                        rounded: 0.17,
-                                        shadow: {
-                                                x:0, y: 3, s: 4, c : "#252525", a: 0.4
-                                                }
-                                },
-                          labels: {
-                                        font : "Arial",
-                                        color: "#a8a8a8",
-                                        weight : "bold"
-                                }
-                     });
-</script>
-                </div>
-	</div>
-
-
-</section>
 
 </div>
 <!--[if !IE]><script>fixScale(document);</script><![endif]-->
