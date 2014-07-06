@@ -2,19 +2,21 @@
 layout: default
 title: Mjollnircoin Downloads
 name: wallet
-mnr_win32_filelink: http://sourceforge.net/projects/mjollnircoin/files/mjollnircoin-wallet/Mjollnircoin-Win32.zip/download
+mnr_win32_filelink: http://sourceforge.net/projects/mjollnircoin/files/releases/0.8.7.0/Mjollnircoin-Win32.zip/download
 mnr_win32_filename: Mjollnircoin-Win32.zip
 mnr_win32_filename_sha: Mjollnircoin-Win32.zip.sha.txt
 
-mnr_ubuntu1404_filelink: http://sourceforge.net/projects/mjollnircoin/files/mjollnircoin-wallet/Mjollnircoin-Ubuntu14.04.zip/download
+mnr_ubuntu1404_filelink: http://sourceforge.net/projects/mjollnircoin/files/releases/0.8.7.0/Mjollnircoin-Ubuntu14.04-x86_64.zip/download
 mnr_ubuntu1404_filename: Mjollnircoin-Ubuntu14.04.zip
 mnr_ubuntu1404_filename_sha: Mjollnircoin-Ubuntu14.04.zip.sha.txt
 
-mnr_ubuntu1304_filelink: http://sourceforge.net/projects/mjollnircoin/files/mjollnircoin-wallet/Mjollnircoin-Ubuntu13.04.zip/download
+mnr_ubuntu1404_filelink_32: http://sourceforge.net/projects/mjollnircoin/files/releases/0.8.7.0/Mjollnircoin-Ubuntu14.04-i686.zip/download
+
+mnr_ubuntu1304_filelink: http://sourceforge.net/projects/mjollnircoin/files/releases/0.8.7.0/Mjollnircoin-Ubuntu13.04-x86_64.zip/download
 mnr_ubuntu1304_filename: Mjollnircoin-Ubuntu13.04.zip
 mnr_ubuntu1304_filename_sha: Mjollnircoin-Ubuntu13.04.zip.sha.txt
 
-mnr_osx_filelink: http://sourceforge.net/projects/mjollnircoin/files/mjollnircoin-wallet/Mjollnircoin-Qt.dmg/download
+mnr_osx_filelink: http://sourceforge.net/projects/mjollnircoin/files/releases/0.8.7.0/Mjollnircoin-Qt.dmg/download
 mnr_osx_filename: Mjollnircoin-Qt.dmg
 mnr_osx_filename_sha: Mjollnircoin-MacOSX.zip.sha.txt
 ---
@@ -33,17 +35,17 @@ You can find the CPU miner <a href="download-miner.html">here</a>, the GPU miner
 You can find the KeyPair and Address Tool <a href="download-genkeys.html">here</a>. You can use this tool to create a brainwallet or an offline/coldstorage Mjollnircoin address
 <p>
 
-<section>
-
 <h2>Wallet Download</h2>
 <p>
-Here you will find the latest binaries of the Mjollnircoin wallet.
-Our source code repositories are located <a href="https://github.com/brokkir">here</a>
+Our source code repositories are located at <a href="https://github.com/brokkir">github.com/brokkir</a>. The latest release is <b>version 0.8.7.0</b> (7 july build)
 </p>
 
-<h2>OpenSSL</h2>
+<h2>Release History</h2>
 <p>
-Mjollnircoin-Win32 is statically linked with openssl-1.0.1h
+<ul>
+ <li>May 4th, 2014 first release</li>
+ <li>July 7th, 2014 <a href="https://github.com/brokkir/mjollnircoin/compare/mjollnircoin-0.8.7.0">second release</a></li>
+</ul>
 </p>
 
 <div>
@@ -90,7 +92,7 @@ DOWNLOAD<br>{{page.mnr_osx_filename}}<br>for Mac OS X 10.8</a>
 <span class="arrowdown">
 <img title="" src="images/arrowdown.png"></img>
 </span>
-DOWNLOAD<br>{{page.mnr_ubuntu1304_filename}}<br>for Ubuntu 13.04</a>
+DOWNLOAD<br>{{page.mnr_ubuntu1304_filename}}<br>for Ubuntu 13.04 64 bit</a>
 	<a class="checksum" href="{{page.mnr_ubuntu1304_filename_sha}}">
 <div class="checksumtext">SHA checksum</div></a>
 
@@ -109,7 +111,23 @@ DOWNLOAD<br>{{page.mnr_ubuntu1304_filename}}<br>for Ubuntu 13.04</a>
 <span class="arrowdown">
 <img title="" src="images/arrowdown.png"></img>
 </span>
-DOWNLOAD<br>{{page.mnr_ubuntu1404_filename}}<br>for Ubuntu 14.04</a>
+DOWNLOAD<br>{{page.mnr_ubuntu1404_filename}}<br>for Ubuntu 14.04 64 bit</a>
+	<a class="checksum" href="{{page.mnr_ubuntu1404_filename_sha}}">
+<div class="checksumtext">SHA checksum</div></a>
+
+  </div>
+</div>
+<div>
+  <!-- ubuntu 14.04 -->
+   <div class="download">
+	<a class="downloadlink" href="{{page.mnr_ubuntu1404_filelink_32}}">
+<span class="downloadicon">
+<img title="" src="images/ubuntu.png"></img>
+</span>
+<span class="arrowdown">
+<img title="" src="images/arrowdown.png"></img>
+</span>
+DOWNLOAD<br>{{page.mnr_ubuntu1404_filename}}<br>for Ubuntu 14.04 32 bit</a>
 	<a class="checksum" href="{{page.mnr_ubuntu1404_filename_sha}}">
 <div class="checksumtext">SHA checksum</div></a>
 
@@ -117,6 +135,8 @@ DOWNLOAD<br>{{page.mnr_ubuntu1404_filename}}<br>for Ubuntu 14.04</a>
 </div>
 
 </section>
+
+
 
 <!--[if !IE]><script>fixScale(document);</script><![endif]-->
 
