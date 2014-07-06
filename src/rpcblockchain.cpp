@@ -155,6 +155,32 @@ Value getrawmempool(const Array& params, bool fHelp)
     return a;
 }
 
+
+Value getblockbynumber(const Array& params, bool fHelp)
+{
+    if (fHelp || params.size() < 1 || params.size() >= 2)
+        throw runtime_error(
+            "getblockbynumber <number>\n"
+            "Returns details of a block with given block-number.");
+
+    int nHeight = params[0].get_int();
+    if (nHeight < 0 || nHeight > nBestHeight)
+        throw runtime_error("Block number out of range.");
+
+    CBlock block;
+    CBlockIndex* pblockindex = mapBlockIndex[hashBestChain];
+    while (pblockindex->nHeight > nHeight)
+        pblockindex = pblockindex->pprev;
+
+    uint256 hash = *pblockindex->phashBlock;
+
+    pblockindex = mapBlockIndex[hash];
+    block.ReadFromDisk(pblockindex);
+
+    return blockToJSON(block, pblockindex);
+}
+
+
 Value getblockhash(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
