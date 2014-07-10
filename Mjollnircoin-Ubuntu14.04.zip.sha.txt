@@ -1,0 +1,2 @@
+Mjollnircoin-Ubuntu14.04-i686.zip 774f9b2246a8fe3f98cd74f4247d06385a586fda
+Mjollnircoin-Ubuntu14.04-x86_64.zip f2fa13a8d4adee1c81c40a485e157518b3aa7d2e
