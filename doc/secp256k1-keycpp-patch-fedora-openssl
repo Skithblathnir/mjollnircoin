@@ -25,7 +25,7 @@ index 1ab4c62..2b4dd78 100644
 +// Local implementation of NID_secp256k1 derived from patch
 +// http://pastebin.com/raw.php?i=GSdYL8jz
 +
-+// this data is identical to that found in openssl-1.0.1f/crypto/ec/ec_curve.c
++// this data is identical to that found in openssl-1.0.1l/crypto/ec/ec_curve.c
 +static const struct { EC_CURVE_DATA h; unsigned char data[0+32*6]; }
 +    _EC_SECG_PRIME_256K1 = {
 +        { NID_X9_62_prime_field,0,32,1 },
@@ -58,10 +58,10 @@ index 1ab4c62..2b4dd78 100644
 +
 +
 +//   Apart from spacing and the lack of some new functionality recently
-+//   added to openssl, this function matches the openssl-1.0.1f version.
++//   added to openssl, this function matches the openssl-1.0.1l version.
 +//   diff --ignore-all-space -u20
 +//     <(grep -A121 'static EC_GROUP \*ec_group_new_from_data
-+//         openssl-1.0.1f/crypto/ec/ec_curve.c | indent)
++//         openssl-1.0.1l/crypto/ec/ec_curve.c | indent)
 +//     <(grep -A85 'static EC_GROUP \*ec_group_new_from_data'
 +//         mjollnircoin/src/key.cpp | indent)
 +static EC_GROUP *ec_group_new_from_data(const EC_CURVE_DATA *data)
@@ -153,7 +153,7 @@ index 1ab4c62..2b4dd78 100644
 +
 +
 +// EC_GROUP_new_by_curve_name_NID_secp256k1() is functionally identical
-+// to EC_GROUP_new_by_curve_name(NID_secp256k1) in openssl-1.0.1f/crypto/ec/ec_curve.c
++// to EC_GROUP_new_by_curve_name(NID_secp256k1) in openssl-1.0.1l/crypto/ec/ec_curve.c
 +EC_GROUP *EC_GROUP_new_by_curve_name_NID_secp256k1(void)
 +{
 +    static EC_GROUP *group = NULL;
@@ -164,7 +164,7 @@ index 1ab4c62..2b4dd78 100644
 +    if (group == NULL) {
 +        fprintf(stderr,
 +            "Your openssl library lacks the elliptic curve chosen by Satoshi for bitcoin.\n"
-+            "Using implementation identical to that in openssl version 1.0.1f.\n");
++            "Using implementation identical to that in openssl version 1.0.1l\n");
 +        group = ec_group_new_from_data(&_EC_SECG_PRIME_256K1.h);
 +        EC_GROUP_set_curve_name (group, NID_secp256k1);
 +    }
@@ -174,10 +174,10 @@ index 1ab4c62..2b4dd78 100644
 +
 +
 +// EC_KEY_new_by_curve_name_NID_secp256k1() is functionally identical
-+// to EC_KEY_new_by_curve_name(NID_secp256k1) in openssl-1.0.1f/crypto/ec/ec_key.c
++// to EC_KEY_new_by_curve_name(NID_secp256k1) in openssl-1.0.1l/crypto/ec/ec_key.c
 +// diff -u10 --ignore-all-space
 +//    <(grep -A12 '\*EC_KEY_new_by_curve_name'
-+//       openssl-1.0.1f/crypto/ec/ec_key.c | indent)
++//       openssl-1.0.1l/crypto/ec/ec_key.c | indent)
 +//    <(grep -A16 '\*EC_KEY_new_by_curve_name'
 +//       mjollnircoin/src/key.cpp | indent)
 +EC_KEY *EC_KEY_new_by_curve_name_NID_secp256k1(void)
