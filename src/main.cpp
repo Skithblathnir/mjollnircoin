@@ -1093,73 +1093,8 @@ inline int64_t GetDevaluatedBlock( float rate, int nCycle )
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-	int64 nSubsidy = 0;
-	if( nHeight < 1000 ) {
-		nSubsidy = 125  * COIN;
-	}
-	else if ( nHeight < 2000 )
-	{
-		nSubsidy = 100 * COIN;
-	}
-	else if ( nHeight < 4000 )
-	{
-		nSubsidy = 75 * COIN;
-	}
-	else if ( nHeight < 105840 )
-	{
-		nSubsidy = 50 * COIN;
-	} 
-	else if ( nHeight < 1397477 )
-	{
-		/*
-reward: 5000000000 (50.00000000) nHeight 109200 
-reward: 4957499904 (49.57500076) nHeight 117600 
-reward: 4915361280 (49.15361404) nHeight 126000 
-reward: 4873581056 (48.73580933) nHeight 134400 
-reward: 4832155648 (48.32155609) nHeight 142800 
-reward: 4791082496 (47.91082382) nHeight 151200 
-reward: 4750358016 (47.50358200) nHeight 159600 
-reward: 4709980160 (47.09980011) nHeight 168000 
-reward: 4669945344 (46.69945145) nHeight 176400 
-reward: 4630250496 (46.30250549) nHeight 184800 
-reward: 4590893568 (45.90893555) nHeight 193200 
-reward: 4551870976 (45.51871109) nHeight 201600 
-reward: 4513180160 (45.13180161) nHeight 210000 
-reward: 4474818048 (44.74818039) nHeight 218400 
-reward: 4436782080 (44.36782074) nHeight 226800 
-reward: 4399069696 (43.99069595) nHeight 235200 
-reward: 4361677312 (43.61677551) nHeight 243600 
-reward: 4324603392 (43.24603271) nHeight 252000 
-reward: 4287844096 (42.87844086) nHeight 260400 
-reward: 4251397376 (42.51397324) nHeight 268800 
-reward: 4215260416 (42.15260315) nHeight 277200 
-reward: 4179430656 (41.79430771) nHeight 285600 
-reward: 4143905536 (41.43905640) nHeight 294000 
-reward: 4108682240 (41.08682251) nHeight 302400 
-reward: 4073758208 (40.73758316) nHeight 310800 
-reward: 4039131648 (40.39131546) nHeight 319200 
-reward: 4004798976 (40.04798889) nHeight 327600 
-reward: 3970758144 (39.70758057) nHeight 336000 
-reward: 3937006848 (39.37006760) nHeight 344400 
-reward: 3903542272 (39.03542328) nHeight 352800 
-reward: 3870362112 (38.70362091) nHeight 361200 
-reward: 3837464064 (38.37464142) nHeight 369600 
-reward: 3804845824 (38.04845810) nHeight 378000 
-reward: 3772504832 (37.72504807) nHeight 386400 
-reward: 3740438528 (37.40438461) nHeight 394800 
-reward: 3708644864 (37.08644867) nHeight 403200 
-reward: 3677121280 (36.77121353) nHeight 411600 
-reward: 3645865728 (36.45865631) nHeight 420000 
-...
-reward: 1377750912 (13.77750874) nHeight 1377600 
-reward: 1366039936 (13.66039944) nHeight 1386000 
-reward: 1354428544 (13.54428577) nHeight 1394400 
-
-
-		*/	
-		nSubsidy = GetDevaluatedBlock( 0.0085f, (nHeight - 105840)/8400 );
-
-	}
+	// Slow steady decrease of 0.85% every 11 days
+	int64 nSubsidy = GetDevaluatedBlock( 0.0085f, nHeight/8400 );
 
 	return (nSubsidy + nFees);
 }
