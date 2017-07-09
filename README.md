@@ -1,3 +1,9 @@
+Reviving Mjollnircoin
+---------------------
+
+This ultra-secure coin was launched in 2014 but it has been disbanded. This is an attempt to revive this great coin
+
+
 Introduction
 ------------
 Mjollnircoin is a decentralized digital currency that enables instant payments to anyone in the world; it is a lite version of Bitcoin using a redundant cryptographic function as a proof-of-work algorithm. Mjollnircoin is a people's currency, intended to be efficiently mined with consumer-grade hardware. It is ultra secure, ASIC resistant, Multipool resistant and rare with a total number of 42 million mjollnircoins.
@@ -13,9 +19,7 @@ Technical specification
 - Block time: 2 minutes
 - Block re-target up: Every 10 blocks (Max 100%)
 - Block re-target down: Every block (Max 500%)
-- First week reward: 125 MNR dropping to 50 MNR in 5.5 days
-- Weeks 2 - 21: 50 MNR
-- Block reduction after week 21: Slow steady decrease of 0.85% every 11 days
+- Block reward: 50 and slowly decreasing by 0.85% every 11 days
 - Multipool defence: Temporal re-targeting
 - Starting block reward: Increased for the first 4000 blocks
 - Premine: 0.5% for public fundraiser (210.000 MNR)
