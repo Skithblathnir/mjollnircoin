@@ -4,6 +4,8 @@ Reviving Mjollnircoin
 This ultra-secure coin was launched in 2014 but it has been disbanded. This is an attempt to revive this great coin
 
 
+
+
 Introduction
 ------------
 Mjollnircoin is a decentralized digital currency that enables instant payments to anyone in the world; it is a lite version of Bitcoin using a redundant cryptographic function as a proof-of-work algorithm. Mjollnircoin is a people's currency, intended to be efficiently mined with consumer-grade hardware. It is ultra secure, ASIC resistant, Multipool resistant and rare with a total number of 42 million mjollnircoins.
