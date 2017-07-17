@@ -38,7 +38,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("0x00000a44fc2a11bc0f2f4482d46146204dec745ebb751274a0fdcc3757f4302c");
+uint256 hashGenesisBlock("0x0000273e6545f3e6df54f90a3f61fa32a7232d1d26c86c9f93b270a3ceaa214c");
 
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 16);
 CBlockIndex* pindexGenesisBlock = NULL;
@@ -55,7 +55,7 @@ bool fReindex = false;
 bool fBenchmark = false;
 bool fTxIndex = false;
 unsigned int nCoinCacheSize = 5000;
-int64 nChainStartTime = 1398818200;
+int64 nChainStartTime = 1500224986;
 
 #define PREMINE 210000
 
@@ -1347,8 +1347,9 @@ void static InvalidChainFound(CBlockIndex* pindexNew)
     printf("InvalidChainFound:  current best=%s  height=%d  log2_work=%.8g  date=%s\n",
       hashBestChain.ToString().c_str(), nBestHeight, log(nBestChainWork.getdouble())/log(2.0),
       DateTimeStrFormat("%Y-%m-%d %H:%M:%S", pindexBest->GetBlockTime()).c_str());
-    if (pindexBest && nBestInvalidWork > nBestChainWork + (pindexBest->GetBlockWork() * 6).getuint256())
-        printf("InvalidChainFound: Warning: Displayed transactions may not be correct! You may need to upgrade, or other nodes may need to upgrade.\n");
+
+	if (pindexBest && nBestInvalidWork > nBestChainWork + (pindexBest->GetBlockWork() * 6).getuint256())
+		printf("InvalidChainFound: Warning: Displayed transactions may not be correct! You may need to upgrade, or other nodes may need to upgrade.\n");
 }
 
 void static InvalidBlockFound(CBlockIndex *pindex) {
@@ -1422,16 +1423,6 @@ void CBlockHeader::UpdateTime(const CBlockIndex* pindexPrev)
     if (fTestNet)
         nBits = GetNextWorkRequired(pindexPrev, this);
 }
-
-
-
-
-
-
-
-
-
-
 
 const CTxOut &CTransaction::GetOutputFor(const CTxIn& input, CCoinsViewCache& view)
 {
@@ -2852,7 +2843,7 @@ bool LoadBlockIndex()
         pchMessageStart[2] = 'l';
         pchMessageStart[3] = 'r';
 
-	hashGenesisBlock = uint256("0x0000170721e5acc3067f6193b7d6b2ee3023664e43ae00f441c159db9aef78f7");
+	hashGenesisBlock = uint256("0x00004aa62cca097b40dcbe7f01dd0827d3aa459814eec67298279dcc6b6ad258");
     }
 
     //
@@ -2879,28 +2870,28 @@ bool InitBlockIndex() {
     if (!fReindex) {
 
         // Genesis block
-        const char* pszTimestamp = "04/28/2014 The changing colors of the Universe";
+        const char* pszTimestamp = "07/09/2017 Bitcoin Exchange Receives US Commodity Futures Trading Commission Approval";
         CTransaction txNew;
 	txNew.vin.resize(1);
 	txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
 	
         txNew.vout[0].nValue = PREMINE * COIN;
-	txNew.vout[0].scriptPubKey = CScript() << ParseHex("0427f6049984f779586b9a2835714b79bf4284111cd5248b30b408087ae375bd45918fb4b14325a494208932e8d41c02cf1e3327a5b8077993b35e397eaab674c7") << OP_CHECKSIG;
+	txNew.vout[0].scriptPubKey = CScript() << ParseHex("040ea46fed5cfb11b07ff6f927efd88c974943aeb485a5ee50d0d71ca29d1bc4b5492cfd988ec35e5602cd610d497b11002c24f6d6ef0f9dff392c62858638d11c") << OP_CHECKSIG;
 
         CBlock block;
         block.vtx.push_back(txNew);
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nBits    = 0x1e1fffe0; // 1f00ffff
-        block.nNonce   = 18528392;
-        block.nTime    = 1398818354;
+        block.nBits    = 0x1f00ffff;
+        block.nNonce   = 119692663;
+        block.nTime    = 1500224986;
 
         if (fTestNet)
         {
-	    block.nNonce = 18843094;
-            block.nTime  = 1398818454;
+	    block.nNonce = 119893028;
+            block.nTime  = 1500224990;
         }
 
         uint256 hash = block.GetHash();
@@ -2910,7 +2901,7 @@ bool InitBlockIndex() {
         printf("genesis 0x%s\n", hashGenesisBlock.ToString().c_str());
         printf("merkle  0x%s\n", block.hashMerkleRoot.ToString().c_str());
 	
-	assert( block.hashMerkleRoot == uint256("0xf89c947af6a1b2be07490beac071c5b1545ad4ebc9312cadd412f2b3e25530c8"));
+	assert( block.hashMerkleRoot == uint256("0xcae10250675d87466d0dfc54442169a396b9ef9f3fb6b4aecc1315374dfc7c33"));
 
   	// If genesis block hash does not match, then generate new genesis hash
    	if ( false && block.GetHash() != hashGenesisBlock)
@@ -3155,12 +3146,11 @@ string GetWarnings(string strFor)
         strStatusBar = strMiscWarning;
     }
 
-    // Longer invalid proof-of-work chain
-    if (pindexBest && nBestInvalidWork > nBestChainWork + (pindexBest->GetBlockWork() * 6).getuint256())
-    {
-        nPriority = 2000;
-        strStatusBar = strRPC = _("Warning: Displayed transactions may not be correct! You may need to upgrade, or other nodes may need to upgrade.");
-    }
+	if (pindexBest && nBestInvalidWork > nBestChainWork + (pindexBest->GetBlockWork() * 6).getuint256())
+	{
+		nPriority = 2000;
+		strStatusBar = strRPC = _("Warning: Displayed transactions may not be correct! You may need to upgrade, or other nodes may need to upgrade.");
+	}
 
     // Alerts
     {
