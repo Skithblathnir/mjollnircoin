@@ -57,6 +57,8 @@ bool fTxIndex = false;
 unsigned int nCoinCacheSize = 5000;
 int64 nChainStartTime = 1398818200;
 
+#define PREMINE 210000
+
 /** Fees smaller than this (in satoshi) are considered zero fee (for transaction creation) */
 int64 CTransaction::nMinTxFee = 100000;
 /** Fees smaller than this (in satoshi) are considered zero fee (for relaying) */
@@ -2883,7 +2885,7 @@ bool InitBlockIndex() {
 	txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
 	
-        txNew.vout[0].nValue = 210000 * COIN;
+        txNew.vout[0].nValue = PREMINE * COIN;
 	txNew.vout[0].scriptPubKey = CScript() << ParseHex("0427f6049984f779586b9a2835714b79bf4284111cd5248b30b408087ae375bd45918fb4b14325a494208932e8d41c02cf1e3327a5b8077993b35e397eaab674c7") << OP_CHECKSIG;
 
         CBlock block;
