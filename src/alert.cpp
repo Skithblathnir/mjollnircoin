@@ -19,8 +19,9 @@ using namespace std;
 map<uint256, CAlert> mapAlerts;
 CCriticalSection cs_mapAlerts;
 
-static const char* pszMainKey = "040184710fa689ad5023690c80f3a49c8f13f8d45b8c857fbcbc8bc4a8e4d3eb4b10f4d4604fa08dce601aaf0f470216fe1b51850b4acf21b179c45070ac7b03a9";
-static const char* pszTestKey = "04302390343f91cc401d56d68b123028bf52e5fca1939df127f63c6467cdf9c8e2c14b61104cf817d0b780da337893ecc4aaff1309e536162dabbdb45200ca2b0a";
+static const char* pszMainKey = "040ef8f16d8e049175a14ee3bbc26f64d7700626500a7f4a1096d5dd2f57ef04f69a48dae6c359a80a8c33b011a58e3c50d1c81900ca353f40c00bdeafa6c9cee2";
+
+static const char* pszTestKey = "04ff007d11bd41fa74e0076df8f8de6bfb6c0ca485a536cf47909437f911038f454d7936f40d51465962dbc590dbeb6318350110c991f81adb4202342f7435af91";
 
 void CUnsignedAlert::SetNull()
 {
@@ -128,6 +129,11 @@ bool CAlert::RelayTo(CNode* pnode) const
 {
     if (!IsInEffect())
         return false;
+    /* don't relay to nodes which haven't sent their version message
+    if (pnode->nVersion == 0)
+        return false;
+    */
+
     // returns true if wasn't already contained in the set
     if (pnode->setKnown.insert(GetHash()).second)
     {
