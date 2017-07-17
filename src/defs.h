@@ -6,10 +6,10 @@
 #define RPC_PORT 8320
 
 #define DMAX_MONEY 42000000
-#define MAX_BLOCKK 1397477 
 //old max_blockk 420000
-#define COINS_PER_BLOCK 50
 #define AMOUNT_LIMIT 42000004.0f
-#define DCOINBASE_MATURITY 100
+
+//4 minutes
+#define DCOINBASE_MATURITY 240
 
 #endif
