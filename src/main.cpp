@@ -57,7 +57,7 @@ bool fTxIndex = false;
 unsigned int nCoinCacheSize = 5000;
 int64 nChainStartTime = 1500224986;
 
-#define PREMINE 210000
+#define PREMINE 1260000
 
 /** Fees smaller than this (in satoshi) are considered zero fee (for transaction creation) */
 int64 CTransaction::nMinTxFee = 100000;

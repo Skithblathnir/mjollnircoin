@@ -9,7 +9,7 @@
 //old max_blockk 420000
 #define AMOUNT_LIMIT 42000004.0f
 
-//4 minutes
-#define DCOINBASE_MATURITY 240
+//2 minutes
+#define DCOINBASE_MATURITY 120
 
 #endif
