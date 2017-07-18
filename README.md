@@ -3,7 +3,9 @@ Reviving Mjollnircoin
 
 This ultra-secure coin was launched in 2014 but it has been disbanded. This is an attempt to revive this great coin
 
+This is a work in progress, the wallet sources must be updated.
 
+Shortly before the release, a new genesis will be generated. 
 
 
 Introduction
